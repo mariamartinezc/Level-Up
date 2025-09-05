@@ -7,15 +7,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Level-UP</title>
-
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 <style>
-   
     .bienvenida {
-        background-color: #f8f9fa;
-        border-radius: 10px;
+        background: #0c3865a3;
+        color: white;
+        border: 2px solid #1e8fff8a;
+        border-radius: 15px;
         overflow: hidden;
     }
 
@@ -26,19 +33,45 @@
     }
 
     body {
-        font-family: Arial, sans-serif;
+        font-family: 'Roboto', sans-serif;
         background-color: #000000;
         margin: 0;
         padding: 0;
+        color: #FFFFFF;
     }
+
+
     footer {
-        background-color: #1E90FF;
+        background-color: #1e8fff91;
         color: white;
         text-align: center;
         padding: 10px 0;
         margin-top: 20px;
     }
 
+
+    .bienvenido-titulo {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 700;
+        color: #39FF14;
+    }
+
+    .card-text {
+        color: #D3D3D3;
+    }
+
+    .btn-primary {
+        background-color: #39FF14;
+        border: none;
+    }
+
+    .destacado {
+        background: #0c3865a3;
+        color: white;
+        border: 2px solid #1e8fff8a;
+        border-radius: 15px;
+        overflow: hidden;
+    }
 </style>
 
 <body>
@@ -48,7 +81,7 @@
             <div class="container-fluid">
 
                 <a class="navbar-brand" href="#">
-                    <img src="assets/images/Logo-Level_UP.png" alt="Logo" width="50px">
+                    <img src="assets/images/LogoNuevo.png" alt="Logo" width="50px">
                     LEVEL-UP GAMER
                 </a>
 
@@ -58,18 +91,51 @@
 
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav">
+                    <ul class="navbar-nav posicion-centro mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                            <a class="nav-link active" aria-current="page" href="#">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Productos</a>
+                            <a class="nav-link" href="#">PRODUCTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Servicios</a>
+                            <a class="nav-link" href="#">NOSOTROS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BLOGS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CONTACTO</a>
                         </li>
 
                     </ul>
+                    <!--seccion carrito-->
+                    <ul class="navbar-nav ms-auto">
+
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="#">
+                                <img src="assets/images/carrito-de-compras.png" alt="Logo" width="30px">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Carrito</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+
+
+    </header>
+
+
+    <main>
+        <!-- barra de navegacion login y registro -->
+        <nav class="navbar navbar-expand-lg  " data-bs-theme="dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNav">
+
                     <!--seccion de login y resgistro-->
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
@@ -83,18 +149,13 @@
             </div>
         </nav>
 
-
-    </header>
-
-
-    <main>
-        <!-- bienvenidad  -->
+        <!-- bienvenida  -->
         <section class="container my-5">
             <div class="bienvenida card mb-3 shadow-lg">
                 <div class="row g-0">
                     <div class="col-md-6">
                         <div class="card-body p-4 p-md-5">
-                            <h2 class="welcome-title">Bienvenidos a Level-Up</h2>
+                            <h2 class="bienvenido-titulo">Bienvenidos a Level-Up Gamer</h2>
                             <p class="card-text">
                                 Level-Up Gamer es una tienda online dedicada a satisfacer las necesidades de los
                                 entusiastas de los
@@ -108,6 +169,25 @@
                                 Aunque no cuenta con una
                                 ubicación física,
                                 realiza despachos a todo el país.
+                            </p>
+                            <h5>Nuestra Misión es :</h5>
+                            <p>
+                                Proporcionar productos de alta calidad para gamers en todo Chile, ofreciendo una
+                                experiencia de
+                                compra única y personalizada, con un enfoque en la satisfacción del cliente y el
+                                crecimiento de la
+                                comunidad gamer.
+
+                            </p>
+                            <h5>Nuestra Visión es :</h5>
+
+                            <p>
+                                Ser la tienda online líder en productos para gamers en Chile, reconocida por su
+                                innovación, servicio
+                                al cliente excepcional, y un programa de fidelización basado en gamificación que
+                                recompense a
+                                nuestros clientes más fieles.
+
                             </p>
                             <div class="mt-4">
                                 <a href="#" class="btn btn-success btn-primary me-3">Ver Productos</a>
@@ -125,6 +205,57 @@
                     </div>
                 </div>
         </section>
+        <section>
+
+            <!-- productos destacados -->
+
+
+            <div class="container my-5">
+                <h2 class="text-center mb-4">Productos Destacados</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card destacado h-100 shadow-lg">
+                            <img src="assets/images/catan.jpg" class="card-img-top" alt="Catan" style="width: auto;">
+                            <div class="card-body">
+                                <h1 class="card-title">Catan</h1>
+                                <p class="card-text">Un clásico juego de estrategia donde los jugadores compiten por
+                                    colonizar y
+                                    expandirse en la isla de Catan. Ideal para 3-4 jugadores y perfecto para noches de
+                                    juego en
+                                    familia o con amigos.</p>
+                                <a href="#" class="btn btn-primary">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card destacado h-100 shadow-lg">
+                            <img src="assets/images/monitor.jpg" class="card-img-top" alt="PlayStation 5">
+                            <div class="card-body">
+                                <h1 class="card-title">PlayStation 5</h1>
+                                <p class="card-text">La consola de última generación de Sony, que ofrece gráficos
+                                    impresionantes y tiempos de carga ultrarrápidos para una experiencia de juego
+                                    inmersiva.</p>
+                                <a href="#" class="btn btn-primary">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card destacado h-100 shadow-lg">
+                            <img src="assets/images/silla.jpg" class="card-img-top" alt="Silla Gamer">
+                            <div class="card-body">
+                                <h1 class="card-title">Silla Gamer</h1>
+                                <p class="card-text">Silla Gamer ergonómica con soporte lumbar y reposabrazos
+                                    ajustables.</p>
+                                <a href="#" class="btn btn-primary">Ver Detalles</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+
 
         </section>
     </main>
