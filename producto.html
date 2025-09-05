@@ -59,22 +59,13 @@
         position: relative;
     }
 
-    .bienvenido-titulo {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 700;
-        color: #39FF14;
-    }
-
-    .card-text {
-        color: #D3D3D3;
-    }
 
     .btn-primary {
         background-color: #39FF14;
         border: none;
     }
 
-    .destacado {
+    .producto {
         background: #0c3865a3;
         color: white;
         border: 2px solid #1e8fff8a;
@@ -96,6 +87,7 @@
     }
 </style>
 <!-- fin estilos de respaldo -->
+
 <body>
     <header>
 
@@ -171,73 +163,17 @@
             </div>
         </nav>
 
-        <!-- bienvenida  -->
-        <section class="container my-5">
-            <div class="bienvenida card mb-3 shadow-lg">
-                <div class="row g-0">
-                    <div class="col-md-6">
-                        <div class="card-body p-4 p-md-5">
-                            <h2 class="bienvenido-titulo">Bienvenidos a Level-Up Gamer</h2>
-                            <p class="card-text">
-                                Level-Up Gamer es una tienda online dedicada a satisfacer las necesidades de los
-                                entusiastas de los
-                                videojuegos en Chile. Lanzada hace dos años como respuesta a la creciente demanda
-                                durante la
-                                pandemia, Leves-Up Gamer ofrece una amplia gama de productos para gamers, desde consolas
-                                y
-                                accesorios hasta computadores y sillas especializadas.
-                            </p>
-                            <p class="card-text">
-                                Aunque no cuenta con una
-                                ubicación física,
-                                realiza despachos a todo el país.
-                            </p>
-                            <h5>Nuestra Misión es :</h5>
-                            <p>
-                                Proporcionar productos de alta calidad para gamers en todo Chile, ofreciendo una
-                                experiencia de
-                                compra única y personalizada, con un enfoque en la satisfacción del cliente y el
-                                crecimiento de la
-                                comunidad gamer.
 
-                            </p>
-                            <h5>Nuestra Visión es :</h5>
-
-                            <p>
-                                Ser la tienda online líder en productos para gamers en Chile, reconocida por su
-                                innovación, servicio
-                                al cliente excepcional, y un programa de fidelización basado en gamificación que
-                                recompense a
-                                nuestros clientes más fieles.
-
-                            </p>
-                            <div class="mt-4">
-                                <a href="#" class="btn btn-success btn-primary me-3">Ver Productos</a>
-                                <a href="#" class="btn  btn-outline-secondary">Ubicacion</a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 d-flex align-items-center">
-                        <div class="img-container">
-                            <img src="assets/images/bienvenido.jpg" class="img-fluid rounded-start"
-                                alt="Level-Up tienda de videojuegos">
-                        </div>
-
-                    </div>
-                </div>
-        </section>
         <section>
 
-            <!-- productos destacados -->
 
 
             <div class="container my-5">
-                <h2 class="text-center mb-4">Productos Destacados</h2>
+                <h1 class="text-center mb-4">Productos</h1>
                 <p class="originales mb-4">---Todos nuestros productos son 100% Originales.---</p>
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="card destacado h-100 shadow-lg">
+                        <div class="card producto h-100 shadow-lg">
                             <img src="assets/images/catan.jpg" class="card-img-top" alt="Catan"
                                 style="width: auto; height: auto; ">
                             <div class="card-body" style=" text-align: center; ">
@@ -248,11 +184,13 @@
                                     juego en
                                     familia o con amigos.</p>
                                 <h3>$29.990 CLP </h3>
+                                <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card destacado h-100 shadow-lg">
+                        <div class="card producto h-100 shadow-lg">
                             <img src="assets/images/ps5.jpg" class="card-img-top" alt="ps5"
                                 style="width: auto; height: auto; ">
                             <div class="card-body" style=" text-align: center; ">
@@ -261,11 +199,13 @@
                                     impresionantes y tiempos de carga ultrarrápidos para una experiencia de juego
                                     inmersiva. </p>
                                 <h3>$549.990 CLP </h3>
+                                <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card destacado h-100 shadow-lg">
+                        <div class="card producto h-100 shadow-lg">
                             <img src="assets/images/poleraLEVEL-UP.png" class="card-img-top" alt="Polera Level-UP"
                                 style="width: auto; height: auto; ">
                             <div class="card-body" style=" text-align: center; ">
@@ -273,6 +213,8 @@
                                 <p class="card-text">Una camiseta cómoda y estilizada, con la
                                     posibilidad de personalizarla con tu gamer tag o diseño favorito. </p>
                                 <h3>$14.990 CLP </h3>
+                                <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+
                             </div>
                         </div>
                     </div>
@@ -281,7 +223,7 @@
             <div class="container my-5">
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="card destacado h-100 shadow-lg">
+                        <div class="card producto h-100 shadow-lg">
                             <img src="assets/images/Mousepad.jpg" class="card-img-top"
                                 alt="Mousepad Razer Goliathus Extended Chroma:" style="width: auto; height: auto; ">
                             <div class="card-body" style=" text-align: center; ">
@@ -290,11 +232,13 @@
                                     iluminación RGB personalizable, asegurando una superficie suave y uniforme para el
                                     movimiento del mouse.</p>
                                 <h3>$29.990 CLP </h3>
+                                <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card destacado h-100 shadow-lg">
+                        <div class="card producto h-100 shadow-lg">
                             <img src="assets/images/Silla Gamer Secretlab Titan.jpg" class="card-img-top"
                                 alt="Silla Gamer Secretlab Titan" style="width: auto; height: auto; ">
                             <div class="card-body" style=" text-align: center; ">
@@ -302,11 +246,13 @@
                                 <p class="card-text"> Diseñada para el máximo confort, esta silla ofrece un soporte
                                     ergonómico y personalización ajustable para sesiones de juego prolongadas. </p>
                                 <h3>$349.990 CLP </h3>
+                                <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+
                             </div>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card destacado h-100 shadow-lg">
+                        <div class="card producto h-100 shadow-lg">
                             <img src="assets/images/pc-asus.png" class="card-img-top" alt="PC Gamer ASUS ROG Strix"
                                 style="width: auto; height: auto; ">
                             <div class="card-body" style=" text-align: center; ">
@@ -314,8 +260,9 @@
                                 <p class="card-text">Un potente equipo diseñado para los gamers más exigentes,
                                     equipado con los últimos componentes para ofrecer un rendimiento excepcional en
                                     cualquier juego. </p>
-                                <h3>$1.299.990
-                                    CLP </h3>
+                                <h3>$1.299.990 CLP </h3>
+                                <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+
                             </div>
                         </div>
                     </div>
@@ -347,11 +294,11 @@
                             <a class="nav-link" href="#">Computadores |</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Poleras Personalizadas  </a>
+                            <a class="nav-link" href="#">Poleras Personalizadas </a>
                         </li>
-                        
+
                     </ul>
-                    <!--seccion carrito-->
+                    <!--seccion suscribete-->
                     <ul class="navbar-nav ms-auto">
                         <form class="d-flex" role="suscribete">
                             <input class="form-control me-2" type="email" placeholder="@duocuc.cl" aria-label="email" />
