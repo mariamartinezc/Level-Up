@@ -1,453 +1,626 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Guau&Miau · Registro & Login</title>
-  <!-- Bootstrap 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-  <style>
-    body { background: #f7f9fb; }
-    .card { border: 0; box-shadow: 0 10px 30px rgba(0,0,0,.05); }
-    .brand { font-weight: 800; letter-spacing:.5px; }
-    .pets-table td, .pets-table th { vertical-align: middle; }
-    .is-hidden { display: none !important; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Level-UP</title>
+    <!-- Tu archivo CSS personalizado -->
+    <link rel="stylesheet" href="assets/Css/homestyle.css">
+    <!--icono web-->
+    <link rel="icon" type="image/png" href="assets/images/LogoNuevo.png" />
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <style>
+    
+    header {
+        background-color: #1E90FF;
+        padding: 10px 0;
+        margin-bottom: 20px;
+    }
+
+    body {
+        font-family: 'Roboto', sans-serif;
+        background-color: #000000;
+        margin: 0;
+        padding: 0;
+        color: #FFFFFF;
+    }
+
+
+    footer {
+        background-color: #1e8fff91;
+        color: white;
+        text-align: center;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+
+    .categorias {
+        position: relative;
+    }
+
+    .bienvenido-titulo {
+        font-family: "Orbitron", sans-serif;
+        font-weight: 700;
+        color: #39FF14;
+    }
+
+   
+
+    .btn-primary {
+        background-color: #39FF14;
+        border: none;
+    }
+
+        .card {
+            border: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .05);
+        }
+
+        .brand {
+            font-weight: 800;
+            letter-spacing: .5px;
+        }
+
+        .pets-table td,
+        .pets-table th {
+            vertical-align: middle;
+        }
+
+        .is-hidden {
+            display: none !important;
+        }
+    </style>
 </head>
+
 <body>
+<header>
+        <nav class="navbar navbar-expand-lg  " data-bs-theme="dark">
+            <div class="container-fluid">
 
-  <nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
-    <div class="container">
-      <a class="navbar-brand brand" href="#">🐾 Guau&Miau</a>
-      <div class="ms-auto small text-muted">Demo Registro & Login</div>
-    </div>
-  </nav>
+                <a class="navbar-brand" href="#">
+                    <img src="assets/images/LogoNuevo.png" alt="Logo" width="50px">
+                    LEVEL-UP GAMER
+                </a>
 
-  <main class="container py-4">
-    <div class="row justify-content-center">
-      <div class="col-12 col-lg-10 col-xl-8">
-        <div class="card">
-          <div class="card-body p-4 p-md-5">
-            <ul class="nav nav-pills mb-4 gap-2" id="tabs" role="tablist">
-              <li class="nav-item" role="presentation">
-                <button class="nav-link active" id="tab-reg" data-bs-toggle="pill" data-bs-target="#pane-reg" type="button" role="tab">
-                  <i class="bi bi-person-plus"></i> Registro
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+
                 </button>
-              </li>
-              <li class="nav-item" role="presentation">
-                <button class="nav-link" id="tab-login" data-bs-toggle="pill" data-bs-target="#pane-login" type="button" role="tab">
-                  <i class="bi bi-box-arrow-in-right"></i> Login
-                </button>
-              </li>
-            </ul>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav posicion-centro mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="home.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="producto.html">PRODUCTOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="noticias.html">NOSOTROS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BLOGS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CONTACTO</a>
+                        </li>
 
-            <div class="tab-content">
-              <!-- Registro -->
-              <div class="tab-pane fade show active" id="pane-reg" role="tabpanel">
-                <form id="form-register" novalidate>
-                  <div class="row g-3">
-                    <div class="col-12">
-                      <label class="form-label">Nombre Completo</label>
-                      <input type="text" class="form-control" id="fullName" maxlength="50" required placeholder="Ej: Ana Pérez">
-                      <div class="form-text">Máximo 50 caracteres. Solo letras y espacios.</div>
-                      <div class="invalid-feedback">Ingresa un nombre válido (solo letras y espacios, máx. 50).</div>
-                    </div>
+                    </ul>
+                    <!--seccion carrito-->
+                    <ul class="navbar-nav ms-auto">
 
-                    <div class="col-12">
-                      <label class="form-label">Correo electrónico</label>
-                      <input type="email" class="form-control" id="email" inputmode="email" required placeholder="usuario@duoc.cl">
-                      <div class="form-text">Debe ser del dominio <strong>@duoc.cl</strong> y no estar registrado.</div>
-                      <div class="invalid-feedback" id="email-error">Ingresa un correo @duoc.cl válido.</div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <label class="form-label">Contraseña</label>
-                      <div class="input-group">
-                        <input type="password" class="form-control" id="password" required aria-describedby="pwdHelp">
-                        <button class="btn btn-outline-secondary" type="button" id="togglePwd"><i class="bi bi-eye"></i></button>
-                      </div>
-                      <div id="pwdHelp" class="form-text">
-                        Mín. 8 caracteres, con mayúscula, minúscula, número y carácter especial.
-                      </div>
-                      <div class="invalid-feedback">La contraseña no cumple los requisitos.</div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <label class="form-label">Confirmación de contraseña</label>
-                      <input type="password" class="form-control" id="confirmPassword" required>
-                      <div class="invalid-feedback">La confirmación debe coincidir con la contraseña.</div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <label class="form-label">Teléfono (opcional)</label>
-                      <input type="tel" class="form-control" id="phone" inputmode="tel" placeholder="Ej: 56912345678">
-                      <div class="form-text">Solo números. Opcional.</div>
-                      <div class="invalid-feedback">Ingresa un teléfono válido (solo dígitos, 8–15).</div>
-                    </div>
-
-                    <div class="col-12"><hr class="my-3"></div>
-
-                    <div class="col-12 d-flex align-items-center justify-content-between">
-                      <h5 class="mb-0">Registro de mascotas</h5>
-                      <button type="button" class="btn btn-sm btn-primary" id="addPet"><i class="bi bi-plus-circle"></i> Añadir mascota</button>
-                    </div>
-
-                    <div class="col-12">
-                      <div class="table-responsive">
-                        <table class="table table-sm align-middle pets-table" id="petsTable">
-                          <thead>
-                            <tr>
-                              <th style="width: 180px;">Tipo</th>
-                              <th>Nombre</th>
-                              <th style="width: 80px;"></th>
-                            </tr>
-                          </thead>
-                          <tbody id="petsBody">
-                            <!-- filas dinámicas -->
-                          </tbody>
-                        </table>
-                      </div>
-                      <div class="text-muted small">Debe registrar al menos una mascota. Tipos permitidos: Gato, Perro, Ave, Otro.</div>
-                      <div class="text-danger small mt-1 is-hidden" id="petsError">Agrega al menos una mascota válida.</div>
-                    </div>
-
-                    <div class="col-12 d-grid d-md-flex gap-2 mt-2">
-                      <button type="submit" class="btn btn-success"><i class="bi bi-check2-circle"></i> Crear cuenta</button>
-                      <button type="reset" class="btn btn-outline-secondary" id="resetReg"><i class="bi bi-arrow-counterclockwise"></i> Limpiar</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-
-              <!-- Login -->
-              <div class="tab-pane fade" id="pane-login" role="tabpanel">
-                <form id="form-login" class="mt-2" novalidate>
-                  <div class="mb-3">
-                    <label class="form-label">Correo @duoc.cl</label>
-                    <input type="email" class="form-control" id="loginEmail" required placeholder="usuario@duoc.cl">
-                    <div class="invalid-feedback">Ingresa un correo válido @duoc.cl.</div>
-                  </div>
-                  <div class="mb-3">
-                    <label class="form-label">Contraseña</label>
-                    <div class="input-group">
-                      <input type="password" class="form-control" id="loginPassword" required>
-                      <button class="btn btn-outline-secondary" type="button" id="togglePwdLogin"><i class="bi bi-eye"></i></button>
-                    </div>
-                    <div class="invalid-feedback">Ingresa tu contraseña.</div>
-                  </div>
-
-                  <div class="d-grid d-md-flex gap-2">
-                    <button type="submit" class="btn btn-primary"><i class="bi bi-box-arrow-in-right"></i> Ingresar</button>
-                    <button type="button" class="btn btn-link" data-bs-toggle="modal" data-bs-target="#recoverModal">¿Olvidaste tu contraseña?</button>
-                  </div>
-
-                  <div class="alert alert-danger d-flex align-items-center gap-2 mt-3 is-hidden" id="loginError">
-                    <i class="bi bi-exclamation-triangle-fill"></i>
-                    <div>Usuario o contraseña incorrectos. Revisa tus datos o recupera el acceso.</div>
-                  </div>
-
-                  <div class="alert alert-success mt-3 is-hidden" id="loginSuccess">
-                    <i class="bi bi-check-circle-fill"></i> ¡Bienvenido/a! Login exitoso.
-                  </div>
-                </form>
-              </div>
-
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="#">
+                                <img src="assets/images/carrito-de-compras.png" alt="Logo" width="30px">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Carrito</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
+        </nav>
 
-        <div class="text-center text-muted small mt-3">
-          Proyecto demostrativo – Datos almacenados en <code>localStorage</code> para efectos académicos.
+</header>
+
+    <main class="container py-4">
+           <div class="container my-5">
+                <h1 class="text-center mb-4">--REGISTRAR USUARIO--</h1>
+                <p class="originales mb-4">---Todos nuestros productos son 100% Originales.---</p>
+            </div>
+        <div class="row justify-content-center">
+            <div class="col-12 col-lg-10 col-xl-8">
+                <div class="card">
+                    <div class="card-body p-4 p-md-5">
+                        <ul class="nav nav-pills mb-4 gap-2" id="tabs" role="tablist">
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link active" id="tab-reg" data-bs-toggle="pill"
+                                    data-bs-target="#pane-reg" type="button" role="tab">
+                                    <i class="bi bi-person-plus"></i> Registro
+                                </button>
+                            </li>
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="tab-login" data-bs-toggle="pill"
+                                    data-bs-target="#pane-login" type="button" role="tab">
+                                    <i class="bi bi-box-arrow-in-right"></i> Login
+                                </button>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <!-- Registro -->
+                            <div class="tab-pane fade show active" id="pane-reg" role="tabpanel">
+                                <form id="form-register" novalidate>
+                                    <div class="row g-3">
+                                        <div class="col-12">
+                                            <label class="form-label">Nombre Completo</label>
+                                            <input type="text" class="form-control" id="fullName" maxlength="50"
+                                                required placeholder="Ej: Ana Pérez">
+                                            <div class="form-text">Máximo 50 caracteres. Solo letras y espacios.</div>
+                                            <div class="invalid-feedback">Ingresa un nombre válido (solo letras y
+                                                espacios, máx. 50).</div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <label class="form-label">Correo electrónico</label>
+                                            <input type="email" class="form-control" id="email" inputmode="email"
+                                                required placeholder="usuario@duoc.cl">
+                                            <div class="form-text">Debe ser del dominio <strong>@duoc.cl</strong> y no
+                                                estar registrado.</div>
+                                            <div class="invalid-feedback" id="email-error">Ingresa un correo @duoc.cl
+                                                válido.</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">Contraseña</label>
+                                            <div class="input-group">
+                                                <input type="password" class="form-control" id="password" required
+                                                    aria-describedby="pwdHelp">
+                                                <button class="btn btn-outline-secondary" type="button"
+                                                    id="togglePwd"><i class="bi bi-eye"></i></button>
+                                            </div>
+                                            <div id="pwdHelp" class="form-text">
+                                                Mín. 8 caracteres, con mayúscula, minúscula, número y carácter especial.
+                                            </div>
+                                            <div class="invalid-feedback">La contraseña no cumple los requisitos.</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">Confirmación de contraseña</label>
+                                            <input type="password" class="form-control" id="confirmPassword" required>
+                                            <div class="invalid-feedback">La confirmación debe coincidir con la
+                                                contraseña.</div>
+                                        </div>
+
+                                        <div class="col-md-6">
+                                            <label class="form-label">Teléfono (opcional)</label>
+                                            <input type="tel" class="form-control" id="phone" inputmode="tel"
+                                                placeholder="Ej: 56912345678">
+                                            <div class="form-text">Solo números. Opcional.</div>
+                                            <div class="invalid-feedback">Ingresa un teléfono válido (solo dígitos,
+                                                8–15).</div>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <hr class="my-3">
+                                        </div>
+
+                                        <div class="col-12 d-flex align-items-center justify-content-between">
+                                            <h5 class="mb-0">Registro de mascotas</h5>
+                                            <button type="button" class="btn btn-sm btn-primary" id="addPet"><i
+                                                    class="bi bi-plus-circle"></i> Añadir mascota</button>
+                                        </div>
+
+                                        <div class="col-12">
+                                            <div class="table-responsive">
+                                                <table class="table table-sm align-middle pets-table" id="petsTable">
+                                                    <thead>
+                                                        <tr>
+                                                            <th style="width: 180px;">Tipo</th>
+                                                            <th>Nombre</th>
+                                                            <th style="width: 80px;"></th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody id="petsBody">
+                                                        <!-- filas dinámicas -->
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <div class="text-muted small">Debe registrar al menos una mascota. Tipos
+                                                permitidos: Gato, Perro, Ave, Otro.</div>
+                                            <div class="text-danger small mt-1 is-hidden" id="petsError">Agrega al menos
+                                                una mascota válida.</div>
+                                        </div>
+
+                                        <div class="col-12 d-grid d-md-flex gap-2 mt-2">
+                                            <button type="submit" class="btn btn-success"><i
+                                                    class="bi bi-check2-circle"></i> Crear cuenta</button>
+                                            <button type="reset" class="btn btn-outline-secondary" id="resetReg"><i
+                                                    class="bi bi-arrow-counterclockwise"></i> Limpiar</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <!-- Login -->
+                            <div class="tab-pane fade" id="pane-login" role="tabpanel">
+                                <form id="form-login" class="mt-2" novalidate>
+                                    <div class="mb-3">
+                                        <label class="form-label">Correo @duoc.cl</label>
+                                        <input type="email" class="form-control" id="loginEmail" required
+                                            placeholder="usuario@duoc.cl">
+                                        <div class="invalid-feedback">Ingresa un correo válido @duoc.cl.</div>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Contraseña</label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="loginPassword" required>
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                id="togglePwdLogin"><i class="bi bi-eye"></i></button>
+                                        </div>
+                                        <div class="invalid-feedback">Ingresa tu contraseña.</div>
+                                    </div>
+
+                                    <div class="d-grid d-md-flex gap-2">
+                                        <button type="submit" class="btn btn-primary"><i
+                                                class="bi bi-box-arrow-in-right"></i> Ingresar</button>
+                                        <button type="button" class="btn btn-link" data-bs-toggle="modal"
+                                            data-bs-target="#recoverModal">¿Olvidaste tu contraseña?</button>
+                                    </div>
+
+                                    <div class="alert alert-danger d-flex align-items-center gap-2 mt-3 is-hidden"
+                                        id="loginError">
+                                        <i class="bi bi-exclamation-triangle-fill"></i>
+                                        <div>Usuario o contraseña incorrectos. Revisa tus datos o recupera el acceso.
+                                        </div>
+                                    </div>
+
+                                    <div class="alert alert-success mt-3 is-hidden" id="loginSuccess">
+                                        <i class="bi bi-check-circle-fill"></i> ¡Bienvenido/a! Login exitoso.
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </main>
+
+    <!-- Recover Modal -->
+    <div class="modal fade" id="recoverModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title"><i class="bi bi-key"></i> Recuperar acceso</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="mb-2">Ingresa tu correo @duoc.cl y te mostraremos una pista de tu contraseña (solo con
+                        fines académicos).</p>
+                    <div class="input-group">
+                        <input type="email" class="form-control" id="recoverEmail" placeholder="usuario@duoc.cl">
+                        <button class="btn btn-primary" id="recoverBtn" type="button">Buscar</button>
+                    </div>
+                    <div class="mt-3" id="recoverResult"></div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
     </div>
-  </main>
 
-  <!-- Recover Modal -->
-  <div class="modal fade" id="recoverModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title"><i class="bi bi-key"></i> Recuperar acceso</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <footer>
+        <nav class="navbar navbar-expand-lg  " data-bs-theme="dark">
+            <div class="container-fluid" from-footer>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Consolas |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Accesorios |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">juegos de Mesa |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Computadores |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Poleras Personalizadas  </a>
+                        </li>
+                        
+                    </ul>
+                    <!--seccion carrito-->
+                    <ul class="navbar-nav ms-auto">
+                        <form class="d-flex" role="suscribete">
+                            <input class="form-control me-2" type="email" placeholder="@duocuc.cl" aria-label="email" />
+                            <button class="btn btn-outline-success" type="submit">Suscribite</button>
+                        </form>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="copyright">
+            <p> ©2025 Level-Up Gamer. Todos los derechos reservados.</p>
         </div>
-        <div class="modal-body">
-          <p class="mb-2">Ingresa tu correo @duoc.cl y te mostraremos una pista de tu contraseña (solo con fines académicos).</p>
-          <div class="input-group">
-            <input type="email" class="form-control" id="recoverEmail" placeholder="usuario@duoc.cl">
-            <button class="btn btn-primary" id="recoverBtn" type="button">Buscar</button>
-          </div>
-          <div class="mt-3" id="recoverResult"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-        </div>
-      </div>
-    </div>
-  </div>
+    </footer>
 
-  <footer class="container py-4 text-center text-muted small">
-    <div>© 2025 Guau&Miau · Caso académico</div>
-  </footer>
+    <script>
+        // Utilidades de validación
+        const nameRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]{1,50}$/;
+        const duocEmailRegex = /^[A-Za-z0-9._%+-]+@duoc\.cl$/;
+        const phoneRegex = /^\d{8,15}$/; // flexible, solo dígitos
+        const passwordRegex = {
+            length: /.{8,}/,
+            upper: /[A-ZÁÉÍÓÚÑ]/,
+            lower: /[a-záéíóúñ]/,
+            number: /\d/,
+            special: /[^A-Za-z0-9\s]/
+        };
 
-  <script>
-    // Utilidades de validación
-    const nameRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]{1,50}$/;
-    const duocEmailRegex = /^[A-Za-z0-9._%+-]+@duoc\.cl$/;
-    const phoneRegex = /^\d{8,15}$/; // flexible, solo dígitos
-    const passwordRegex = {
-      length: /.{8,}/,
-      upper: /[A-ZÁÉÍÓÚÑ]/,
-      lower: /[a-záéíóúñ]/,
-      number: /\d/,
-      special: /[^A-Za-z0-9\s]/
-    };
+        // Almacenamiento local (simula base de datos)
+        const DB_KEY = 'gm_users_v1';
+        const getUsers = () => JSON.parse(localStorage.getItem(DB_KEY) || '[]');
+        const saveUsers = (users) => localStorage.setItem(DB_KEY, JSON.stringify(users));
 
-    // Almacenamiento local (simula base de datos)
-    const DB_KEY = 'gm_users_v1';
-    const getUsers = () => JSON.parse(localStorage.getItem(DB_KEY) || '[]');
-    const saveUsers = (users) => localStorage.setItem(DB_KEY, JSON.stringify(users));
+        // Helpers UI
+        const show = el => el.classList.remove('is-hidden');
+        const hide = el => el.classList.add('is-hidden');
 
-    // Helpers UI
-    const show = el => el.classList.remove('is-hidden');
-    const hide = el => el.classList.add('is-hidden');
+        // --- Registro de mascotas dinámico ---
+        const petsBody = document.getElementById('petsBody');
+        const petsError = document.getElementById('petsError');
+        const petTypes = ['Gato', 'Perro', 'Ave', 'Otro'];
 
-    // --- Registro de mascotas dinámico ---
-    const petsBody = document.getElementById('petsBody');
-    const petsError = document.getElementById('petsError');
-    const petTypes = ['Gato','Perro','Ave','Otro'];
-
-    function addPetRow(data = {type:'', name:''}) {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `
+        function addPetRow(data = { type: '', name: '' }) {
+            const tr = document.createElement('tr');
+            tr.innerHTML = `
         <td>
           <select class="form-select pet-type" required>
-            <option value="" ${data.type==='' ? 'selected' : ''}>Selecciona…</option>
-            ${petTypes.map(t => `<option value="${t}" ${data.type===t ? 'selected' : ''}>${t}</option>`).join('')}
+            <option value="" ${data.type === '' ? 'selected' : ''}>Selecciona…</option>
+            ${petTypes.map(t => `<option value="${t}" ${data.type === t ? 'selected' : ''}>${t}</option>`).join('')}
           </select>
           <div class="text-danger small mt-1 is-hidden">El tipo es obligatorio.</div>
         </td>
         <td>
-          <input type="text" class="form-control pet-name" placeholder="Nombre de la mascota" maxlength="50" value="${data.name||''}" required>
+          <input type="text" class="form-control pet-name" placeholder="Nombre de la mascota" maxlength="50" value="${data.name || ''}" required>
           <div class="text-danger small mt-1 is-hidden">Nombre obligatorio (máx. 50).</div>
         </td>
         <td class="text-end">
           <button type="button" class="btn btn-outline-danger btn-sm remove-pet"><i class="bi bi-trash"></i></button>
         </td>`;
-      petsBody.appendChild(tr);
+            petsBody.appendChild(tr);
 
-      tr.querySelector('.remove-pet').addEventListener('click', () => {
-        tr.remove();
-        validatePets();
-      });
+            tr.querySelector('.remove-pet').addEventListener('click', () => {
+                tr.remove();
+                validatePets();
+            });
 
-      tr.querySelector('.pet-type').addEventListener('change', validatePets);
-      tr.querySelector('.pet-name').addEventListener('input', validatePets);
-    }
-
-    function getPetsFromUI() {
-      const rows = [...petsBody.querySelectorAll('tr')];
-      return rows.map(r => ({
-        type: r.querySelector('.pet-type').value.trim(),
-        name: r.querySelector('.pet-name').value.trim()
-      }));
-    }
-
-    function validatePets() {
-      const rows = [...petsBody.querySelectorAll('tr')];
-      let valid = rows.length > 0;
-      rows.forEach(r => {
-        const type = r.querySelector('.pet-type');
-        const name = r.querySelector('.pet-name');
-        const typeErr = type.parentElement.querySelector('.text-danger');
-        const nameErr = name.parentElement.querySelector('.text-danger');
-        if (!type.value) { show(typeErr); valid = false; } else { hide(typeErr); }
-        if (!name.value || name.value.length > 50) { show(nameErr); valid = false; } else { hide(nameErr); }
-      });
-      if (!valid) show(petsError); else hide(petsError);
-      return valid;
-    }
-
-    document.getElementById('addPet').addEventListener('click', () => addPetRow());
-    // una fila por defecto
-    addPetRow();
-
-    // --- Validaciones de Registro ---
-    const formRegister = document.getElementById('form-register');
-    const fullName = document.getElementById('fullName');
-    const email = document.getElementById('email');
-    const emailError = document.getElementById('email-error');
-    const password = document.getElementById('password');
-    const confirmPassword = document.getElementById('confirmPassword');
-    const phone = document.getElementById('phone');
-
-    function validateName() {
-      const ok = nameRegex.test(fullName.value.trim());
-      fullName.classList.toggle('is-invalid', !ok);
-      return ok;
-    }
-
-    function validateEmailUnique() {
-      const value = email.value.trim();
-      let ok = duocEmailRegex.test(value);
-      if (ok) {
-        const exists = getUsers().some(u => u.email.toLowerCase() === value.toLowerCase());
-        if (exists) {
-          ok = false;
-          emailError.textContent = 'Este correo ya está registrado. Usa otro @duoc.cl.';
-        } else {
-          emailError.textContent = 'Ingresa un correo @duoc.cl válido.';
+            tr.querySelector('.pet-type').addEventListener('change', validatePets);
+            tr.querySelector('.pet-name').addEventListener('input', validatePets);
         }
-      } else { emailError.textContent = 'Ingresa un correo @duoc.cl válido.'; }
-      email.classList.toggle('is-invalid', !ok);
-      return ok;
-    }
 
-    function validatePassword() {
-      const v = password.value;
-      const ok = passwordRegex.length.test(v) && passwordRegex.upper.test(v) && passwordRegex.lower.test(v) && passwordRegex.number.test(v) && passwordRegex.special.test(v);
-      password.classList.toggle('is-invalid', !ok);
-      return ok;
-    }
+        function getPetsFromUI() {
+            const rows = [...petsBody.querySelectorAll('tr')];
+            return rows.map(r => ({
+                type: r.querySelector('.pet-type').value.trim(),
+                name: r.querySelector('.pet-name').value.trim()
+            }));
+        }
 
-    function validateConfirmPassword() {
-      const ok = confirmPassword.value === password.value && confirmPassword.value.length > 0;
-      confirmPassword.classList.toggle('is-invalid', !ok);
-      return ok;
-    }
+        function validatePets() {
+            const rows = [...petsBody.querySelectorAll('tr')];
+            let valid = rows.length > 0;
+            rows.forEach(r => {
+                const type = r.querySelector('.pet-type');
+                const name = r.querySelector('.pet-name');
+                const typeErr = type.parentElement.querySelector('.text-danger');
+                const nameErr = name.parentElement.querySelector('.text-danger');
+                if (!type.value) { show(typeErr); valid = false; } else { hide(typeErr); }
+                if (!name.value || name.value.length > 50) { show(nameErr); valid = false; } else { hide(nameErr); }
+            });
+            if (!valid) show(petsError); else hide(petsError);
+            return valid;
+        }
 
-    function validatePhone() {
-      const val = phone.value.trim();
-      if (!val) { phone.classList.remove('is-invalid'); return true; }
-      const ok = phoneRegex.test(val);
-      phone.classList.toggle('is-invalid', !ok);
-      return ok;
-    }
+        document.getElementById('addPet').addEventListener('click', () => addPetRow());
+        // una fila por defecto
+        addPetRow();
 
-    fullName.addEventListener('input', validateName);
-    email.addEventListener('input', validateEmailUnique);
-    password.addEventListener('input', () => { validatePassword(); validateConfirmPassword(); });
-    confirmPassword.addEventListener('input', validateConfirmPassword);
-    phone.addEventListener('input', validatePhone);
+        // --- Validaciones de Registro ---
+        const formRegister = document.getElementById('form-register');
+        const fullName = document.getElementById('fullName');
+        const email = document.getElementById('email');
+        const emailError = document.getElementById('email-error');
+        const password = document.getElementById('password');
+        const confirmPassword = document.getElementById('confirmPassword');
+        const phone = document.getElementById('phone');
 
-    document.getElementById('togglePwd').addEventListener('click', () => {
-      password.type = password.type === 'password' ? 'text' : 'password';
-    });
+        function validateName() {
+            const ok = nameRegex.test(fullName.value.trim());
+            fullName.classList.toggle('is-invalid', !ok);
+            return ok;
+        }
 
-    // Submit Registro
-    formRegister.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const ok = [validateName(), validateEmailUnique(), validatePassword(), validateConfirmPassword(), validatePhone(), validatePets()].every(Boolean);
-      if (!ok) return;
+        function validateEmailUnique() {
+            const value = email.value.trim();
+            let ok = duocEmailRegex.test(value);
+            if (ok) {
+                const exists = getUsers().some(u => u.email.toLowerCase() === value.toLowerCase());
+                if (exists) {
+                    ok = false;
+                    emailError.textContent = 'Este correo ya está registrado. Usa otro @duoc.cl.';
+                } else {
+                    emailError.textContent = 'Ingresa un correo @duoc.cl válido.';
+                }
+            } else { emailError.textContent = 'Ingresa un correo @duoc.cl válido.'; }
+            email.classList.toggle('is-invalid', !ok);
+            return ok;
+        }
 
-      const user = {
-        name: fullName.value.trim(),
-        email: email.value.trim(),
-        phone: phone.value.trim() || null,
-        password: password.value, // Nota: En producción, nunca guardar texto plano.
-        pets: getPetsFromUI(),
-        createdAt: new Date().toISOString()
-      };
+        function validatePassword() {
+            const v = password.value;
+            const ok = passwordRegex.length.test(v) && passwordRegex.upper.test(v) && passwordRegex.lower.test(v) && passwordRegex.number.test(v) && passwordRegex.special.test(v);
+            password.classList.toggle('is-invalid', !ok);
+            return ok;
+        }
 
-      const users = getUsers();
-      users.push(user);
-      saveUsers(users);
+        function validateConfirmPassword() {
+            const ok = confirmPassword.value === password.value && confirmPassword.value.length > 0;
+            confirmPassword.classList.toggle('is-invalid', !ok);
+            return ok;
+        }
 
-      // Reset y feedback
-      formRegister.reset();
-      petsBody.innerHTML = '';
-      addPetRow();
-      new bootstrap.Toast(makeToast('Cuenta creada con éxito. Ahora puedes iniciar sesión.')).show();
-      // Cambiar a pestaña Login
-      const tab = new bootstrap.Tab(document.querySelector('#tab-login'));
-      tab.show();
-    });
+        function validatePhone() {
+            const val = phone.value.trim();
+            if (!val) { phone.classList.remove('is-invalid'); return true; }
+            const ok = phoneRegex.test(val);
+            phone.classList.toggle('is-invalid', !ok);
+            return ok;
+        }
 
-    document.getElementById('resetReg').addEventListener('click', () => {
-      // limpiar errores y mascotas
-      [fullName,email,password,confirmPassword,phone].forEach(el => el.classList.remove('is-invalid'));
-      petsBody.innerHTML = '';
-      addPetRow();
-      hide(petsError);
-    });
+        fullName.addEventListener('input', validateName);
+        email.addEventListener('input', validateEmailUnique);
+        password.addEventListener('input', () => { validatePassword(); validateConfirmPassword(); });
+        confirmPassword.addEventListener('input', validateConfirmPassword);
+        phone.addEventListener('input', validatePhone);
 
-    // --- Login ---
-    const formLogin = document.getElementById('form-login');
-    const loginEmail = document.getElementById('loginEmail');
-    const loginPassword = document.getElementById('loginPassword');
-    const loginError = document.getElementById('loginError');
-    const loginSuccess = document.getElementById('loginSuccess');
+        document.getElementById('togglePwd').addEventListener('click', () => {
+            password.type = password.type === 'password' ? 'text' : 'password';
+        });
 
-    document.getElementById('togglePwdLogin').addEventListener('click', () => {
-      loginPassword.type = loginPassword.type === 'password' ? 'text' : 'password';
-    });
+        // Submit Registro
+        formRegister.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const ok = [validateName(), validateEmailUnique(), validatePassword(), validateConfirmPassword(), validatePhone(), validatePets()].every(Boolean);
+            if (!ok) return;
 
-    formLogin.addEventListener('submit', (e) => {
-      e.preventDefault();
-      hide(loginError); hide(loginSuccess);
+            const user = {
+                name: fullName.value.trim(),
+                email: email.value.trim(),
+                phone: phone.value.trim() || null,
+                password: password.value, // Nota: En producción, nunca guardar texto plano.
+                pets: getPetsFromUI(),
+                createdAt: new Date().toISOString()
+            };
 
-      const emailOk = duocEmailRegex.test(loginEmail.value.trim());
-      const pwdOk = loginPassword.value.trim().length > 0;
-      loginEmail.classList.toggle('is-invalid', !emailOk);
-      loginPassword.classList.toggle('is-invalid', !pwdOk);
-      if (!emailOk || !pwdOk) return;
+            const users = getUsers();
+            users.push(user);
+            saveUsers(users);
 
-      const users = getUsers();
-      const found = users.find(u => u.email.toLowerCase() === loginEmail.value.trim().toLowerCase());
-      if (!found || found.password !== loginPassword.value) {
-        show(loginError);
-        return;
-      }
+            // Reset y feedback
+            formRegister.reset();
+            petsBody.innerHTML = '';
+            addPetRow();
+            new bootstrap.Toast(makeToast('Cuenta creada con éxito. Ahora puedes iniciar sesión.')).show();
+            // Cambiar a pestaña Login
+            const tab = new bootstrap.Tab(document.querySelector('#tab-login'));
+            tab.show();
+        });
 
-      show(loginSuccess);
-      new bootstrap.Toast(makeToast('Login exitoso. ¡Bienvenido/a ' + found.name + '!')).show();
-      // Aquí podrías redirigir a un dashboard, etc.
-    });
+        document.getElementById('resetReg').addEventListener('click', () => {
+            // limpiar errores y mascotas
+            [fullName, email, password, confirmPassword, phone].forEach(el => el.classList.remove('is-invalid'));
+            petsBody.innerHTML = '';
+            addPetRow();
+            hide(petsError);
+        });
 
-    // --- Recuperación ---
-    document.getElementById('recoverBtn').addEventListener('click', () => {
-      const out = document.getElementById('recoverResult');
-      const mail = document.getElementById('recoverEmail').value.trim();
-      out.innerHTML = '';
-      if (!duocEmailRegex.test(mail)) {
-        out.innerHTML = '<div class="alert alert-warning">Ingresa un correo válido @duoc.cl.</div>';
-        return;
-      }
-      const u = getUsers().find(u => u.email.toLowerCase() === mail.toLowerCase());
-      if (!u) {
-        out.innerHTML = '<div class="alert alert-danger">No encontramos una cuenta con ese correo.</div>';
-      } else {
-        // Pista: mostramos longitud y primeros/últimos caracteres (solo para demo)
-        const hint = `${u.password[0]}${'*'.repeat(Math.max(0,u.password.length-2))}${u.password[u.password.length-1]}`;
-        out.innerHTML = `<div class="alert alert-info">Pista de contraseña: <code>${hint}</code> · Si no recuerdas tu clave, crea una cuenta nueva.</div>`;
-      }
-    });
+        // --- Login ---
+        const formLogin = document.getElementById('form-login');
+        const loginEmail = document.getElementById('loginEmail');
+        const loginPassword = document.getElementById('loginPassword');
+        const loginError = document.getElementById('loginError');
+        const loginSuccess = document.getElementById('loginSuccess');
 
-    // --- Toast util ---
-    function makeToast(msg) {
-      const toast = document.createElement('div');
-      toast.className = 'toast align-items-center text-bg-dark border-0 position-fixed bottom-0 end-0 m-3';
-      toast.setAttribute('role','alert');
-      toast.setAttribute('aria-live','assertive');
-      toast.setAttribute('aria-atomic','true');
-      toast.innerHTML = `
+        document.getElementById('togglePwdLogin').addEventListener('click', () => {
+            loginPassword.type = loginPassword.type === 'password' ? 'text' : 'password';
+        });
+
+        formLogin.addEventListener('submit', (e) => {
+            e.preventDefault();
+            hide(loginError); hide(loginSuccess);
+
+            const emailOk = duocEmailRegex.test(loginEmail.value.trim());
+            const pwdOk = loginPassword.value.trim().length > 0;
+            loginEmail.classList.toggle('is-invalid', !emailOk);
+            loginPassword.classList.toggle('is-invalid', !pwdOk);
+            if (!emailOk || !pwdOk) return;
+
+            const users = getUsers();
+            const found = users.find(u => u.email.toLowerCase() === loginEmail.value.trim().toLowerCase());
+            if (!found || found.password !== loginPassword.value) {
+                show(loginError);
+                return;
+            }
+
+            show(loginSuccess);
+            new bootstrap.Toast(makeToast('Login exitoso. ¡Bienvenido/a ' + found.name + '!')).show();
+            // Aquí podrías redirigir a un dashboard, etc.
+        });
+
+        // --- Recuperación ---
+        document.getElementById('recoverBtn').addEventListener('click', () => {
+            const out = document.getElementById('recoverResult');
+            const mail = document.getElementById('recoverEmail').value.trim();
+            out.innerHTML = '';
+            if (!duocEmailRegex.test(mail)) {
+                out.innerHTML = '<div class="alert alert-warning">Ingresa un correo válido @duoc.cl.</div>';
+                return;
+            }
+            const u = getUsers().find(u => u.email.toLowerCase() === mail.toLowerCase());
+            if (!u) {
+                out.innerHTML = '<div class="alert alert-danger">No encontramos una cuenta con ese correo.</div>';
+            } else {
+                // Pista: mostramos longitud y primeros/últimos caracteres (solo para demo)
+                const hint = `${u.password[0]}${'*'.repeat(Math.max(0, u.password.length - 2))}${u.password[u.password.length - 1]}`;
+                out.innerHTML = `<div class="alert alert-info">Pista de contraseña: <code>${hint}</code> · Si no recuerdas tu clave, crea una cuenta nueva.</div>`;
+            }
+        });
+
+        // --- Toast util ---
+        function makeToast(msg) {
+            const toast = document.createElement('div');
+            toast.className = 'toast align-items-center text-bg-dark border-0 position-fixed bottom-0 end-0 m-3';
+            toast.setAttribute('role', 'alert');
+            toast.setAttribute('aria-live', 'assertive');
+            toast.setAttribute('aria-atomic', 'true');
+            toast.innerHTML = `
         <div class="d-flex">
           <div class="toast-body">${msg}</div>
           <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
         </div>`;
-      document.body.appendChild(toast);
-      toast.addEventListener('hidden.bs.toast', () => toast.remove());
-      return toast;
-    }
+            document.body.appendChild(toast);
+            toast.addEventListener('hidden.bs.toast', () => toast.remove());
+            return toast;
+        }
 
-    // Accesibilidad: cambiar foco a contenido activo al cambiar tab
-    document.getElementById('tabs').addEventListener('shown.bs.tab', (e) => {
-      if (e.target.id === 'tab-reg') fullName.focus();
-      if (e.target.id === 'tab-login') loginEmail.focus();
-    });
-  </script>
+        // Accesibilidad: cambiar foco a contenido activo al cambiar tab
+        document.getElementById('tabs').addEventListener('shown.bs.tab', (e) => {
+            if (e.target.id === 'tab-reg') fullName.focus();
+            if (e.target.id === 'tab-login') loginEmail.focus();
+        });
+    </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
