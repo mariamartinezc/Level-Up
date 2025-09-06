@@ -256,7 +256,7 @@
                                         </div>
                                     </form>
                                 </div>
-<!--Nueva ruta-->
+
                                 <!-- Login -->
                                  
                                 <div class="tab-pane fade" id="pane-login" role="tabpanel">
@@ -374,7 +374,7 @@
     <script>
         // Utilidades de validación
         const nameRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]{1,50}$/;
-        const duocEmailRegex = /^[A-Za-z0-9._%+-]+@duocuc\.cl$/, /^[A-Za-z0-9._%+-]+@profesor\.duocuc\.cl$/;
+        const duocEmailRegex = /^[a-zA-Z0-9._%+-]+@(duocuc\.cl|profesor\.duoc\.cl)$/i;
         const phoneRegex = /^\d{8,15}$/; // flexible, solo dígitos
         const passwordRegex = {
             length: /.{8,}/,
