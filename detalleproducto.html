@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Level-UP</title>
     <!-- Tu archivo CSS personalizado -->
-    <link rel="stylesheet" href="assets/Css/homestyle.css">
+    <link rel="stylesheet" href="assets/Css/producto.css">
     <!--icono web-->
     <link rel="icon" type="image/png" href="assets/images/LogoNuevo.png" />
 
@@ -24,14 +24,6 @@
 </head>
 <!-- estilos de respaldo -->
 <style>
-    .bienvenida {
-        background: #0c3865a3;
-        color: white;
-        border: 2px solid #1e8fff8a;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
     header {
         background-color: #1E90FF;
         padding: 10px 0;
@@ -59,38 +51,16 @@
         position: relative;
     }
 
-    .bienvenido-titulo {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 700;
-        color: #39FF14;
-    }
-
-
 
     .btn-primary {
         background-color: #39FF14;
         border: none;
     }
 
-    .destacado {
-        background: #0c3865a3;
-        color: white;
-        border: 2px solid #1e8fff8a;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
-    .text-center {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 700;
-        color: #39FF14;
-    }
-
-    .originales {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 500;
-        color: #39FF14;
-        text-align: center;
+    .producto-relacionado {
+        background-color: #f8f8f8;
+        padding: 20px;
+        border-radius: 10px;
     }
 
     .card-img-top {
@@ -101,10 +71,22 @@
         border-radius: 15px;
     }
 
+    .card-img-top {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 300px;
+        object-fit: contain;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
     .card-body {
         display: flex;
         flex-direction: column;
         border-radius: 15px;
+        background-color: #30f30ecf;
+
     }
 
     .card-title {
@@ -119,8 +101,39 @@
         color: #ffffff;
     }
 
-    .btn-ver-detalles {
-        margin-top: auto;
+    .detalle {
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background: #19538ea3;
+        color: white;
+        border: 2px solid #1e8fff8a;
+        border-radius: 15px;
+        overflow: hidden;
+    }
+
+    .img-fluid {
+        border-radius: 15px;
+        padding: 15px;
+
+    }
+
+    .btn-success {
+        background-color: #39FF14;
+        border: none;
+    }
+
+    .btn-success:hover {
+        background-color: #28e214;
+    }
+
+    .btn-primary:hover {
+        background-color: #28e214;
+    }
+
+    .carrousel-control-prev-icon,
+    .carrousel-control-next-icon {
+        background-color: #39FF14;
+        border-radius: 50%;
     }
 </style>
 <!-- fin estilos de respaldo -->
@@ -144,13 +157,13 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav posicion-centro mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link " aria-current="page" href="#">HOME</a>
+                            <a class="nav-link" aria-current="page" href="home.html">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="producto.html">PRODUCTOS</a>
+                            <a class="nav-link active" href="#">PRODUCTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link active" href="#">NOSOTROS</a>
+                            <a class="nav-link" href="#">NOSOTROS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">BLOGS</a>
@@ -182,6 +195,18 @@
 
 
     <main>
+        <!--ruta producto,categoria ,detalle producto-->
+        <section>
+            <div class="container mt-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="producto.html">Producto</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Mouse</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
         <!-- barra de navegacion login y registro -->
         <nav class="navbar navbar-expand-lg  " data-bs-theme="dark">
             <div class="container-fluid">
@@ -200,74 +225,109 @@
             </div>
         </nav>
 
-        <!-- noticias casos importantes  -->
-        <section class="container my-5">
-            <div class="bienvenida card mb-3 shadow-lg">
-                <div class="row g-0">
-                    <div class="col-md-6">
-                        <div class="card-body p-4 p-md-5">
-                            <h2 class="bienvenido-titulo">-Origen de Productos-</h2>
-                            <p class="card-text">
-                                En Level-Up Gamer, nos asociamos exclusivamente con fabricantes autorizados y
-                                distribuidores oficiales para garantizar la autenticidad de todos nuestros productos.
-                                Cada artículo incluye garantía oficial y certificados de autenticidad.
-                            </p>
-                            <h4>Ejemplos para productos específicos:</h4>
-                            <p><strong>Consolas PlayStation:</strong> Importadas directamente desde Sony Latin America,
-                                con garantía oficial de 12 meses y soporte técnico local.</p>
-                            <p><strong>Periféricos Razer:</strong> Distribuidos por el partner autorizado de Razer en
-                                Chile, con certificación de autenticidad y acceso a software oficial.</p>
-                            <p><strong>Juegos de mesa:</strong> Provenientes de editoriales autorizadas con distribución
-                                certificada para Sudamérica.</p>
+        <section>
+            <div class="container mt-3">
+                <h1 class="text-center mb-4">--DETALLE PRODUCTO--</h1>
+                <p class="originales mb-4">---Todos nuestros productos son 100% Originales.---</p>
 
-                            <div class="mt-4">
-                                <a href="producto.html" class="btn btn-success btn-primary me-3">Ver Detalles</a>
-                            </div>
-                        </div>
-
-                    </div>
-                    <div class="col-md-6 d-flex align-items-center">
-                        <div class="img-container">
-                            <img src="assets/images/ORIGENPRODUCTO.png" class="img-fluid rounded-start"
-                                alt="Level-Up tienda de videojuegos">
-                        </div>
-
-                    </div>
-                </div>
+            </div>
         </section>
         <section>
 
-            <div class="container my-5">
-                <div class="destacado card mb-3 shadow-lg">
-                    <div class="row g-0">
-                        <div class="col-md-6 d-flex align-items-center">
-                            <div class="img-container">
-                                <img src="assets/images/torneo.jpg" class="img-fluid rounded-start"
-                                    alt="Torneo Gamer Chile">
-                            </div>
+            <!-- Detalle del Producto -->
+            <div class="detalle container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="assets/images/mouse.png" alt="Mouse Gamer Logitech G502 HERO"
+                            class="img-fluid rounded shadow-lg">
+                    </div>
+                    <div class="col-md-6">
+                        <br>
+                        <h2>Mouse Gamer Logitech G502 HERO</h2>
+                        <h3>MS001 </h3>
+                        <br>
+                        <h3>Precio: $79.990 CLP</h3>
 
-                        </div>
-                        <div class="col-md-6">
-                            <div class="card-body p-4 p-md-5">
-                                <h2 class="bienvenido-titulo">-Nuestro Compromiso-</h2>
-                                <p class="card-text">
-                                    Level-Up Gamer no es solo una tienda, es un espacio que fortalece y desarrolla la
-                                    comunidad gamer chilena a través de diversas iniciativas.</p>
+                        <br>
+                        <hr>
 
-                                </p>
-                                <h4>Iniciativas comunitarias:</h4>
-                                <p><strong>Torneos locales:</strong> Organizamos competencias mensuales con premios en
-                                    equipamiento y juegos.</p>
-                                <div class="mt-4">
-                                    <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
-                                </div>
+                        <p>Experimenta un control y precisión excepcionales con el Mouse Gamer Logitech G502 HERO.
+                            Equipado con un sensor HERO 25K de alta precisión, este mouse ofrece un seguimiento
+                            preciso y una respuesta rápida, ideal para juegos competitivos. Sus 11 botones
+                            programables te permiten personalizar tus comandos para una experiencia de juego
+                            optimizada. Además, cuenta con iluminación RGB personalizable para que puedas adaptar el
+                            aspecto del mouse a tu estilo. Con un diseño ergonómico y cómodo, el G502 HERO es la
+                            elección perfecta para gamers que buscan rendimiento y estilo en cada partida.</p>
+
+
+                        <!--cantidad de producto-->
+                        <label for="cantidad" class="form-label">Cantidad:</label>
+                        <input type="number" id="cantidad" name="cantidad" min="1" class="form-control mb-3" value="1"
+                            style="width: 100px;">
+                        <br>
+                        <hr>
+                        <!--añadir producto-->
+                        <a href="#" class="btn btn-success btn-primary me-3">Añadir al Carrito</a>
+                        <!--volver a producto -->
+                        <a href="producto.html" class="btn btn-success btn-primary me-3">Volver</a>
+
+                    </div>
+                </div>
+
+
+        </section>
+        <br>
+        <hr>
+        <section>
+            <div class="container mt-3">
+                <h1 class="text-center mb-4">--Productos Relacionados--</h1>
+            </div>
+        </section>
+        <!-- Productos Relacionados -->
+        <section class="producto-relacionado my-5">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card producto h-100 shadow-lg">
+                            <img src="assets/images/pc-asus.png" class="card-img-top" alt="PC Gamer ASUS ROG Strix "
+                                style="width: auto; height: auto; ">
+                            <div class="card-body" style=" text-align: center; ">
+                                <h3 class="card-title">PC Gamer ASUS ROG Strix </h3>
+
+                                <h3>$1.299.990 CLP </h3>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </section>
+                    <div class="col-md-4">
+                        <div class="card producto h-100 shadow-lg">
+                            <img src="assets/images/Silla Gamer Secretlab Titan.jpg" class="card-img-top"
+                                alt="Silla Gamer Secretlab Titan " style="width: auto; height: auto; ">
+                            <div class="card-body" style=" text-align: center; ">
+                                <h3 class="card-title">Silla Gamer Secretlab Titan </h3>
 
+                                <h3>$349.990 CLP  </h3>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card producto h-100 shadow-lg">
+                            <img src="assets/images/ps5.jpg" class="card-img-top" alt="PlayStation 5"
+                                class="card-img-top" alt="PlayStation 5" style="width: auto; height: auto; ">
+                            <div class="card-body" style=" text-align: center; ">
+                                <h3 class="card-title">PlayStation</h3>
+                                <h3>$549.990 CLP </h3>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
 
 
 
@@ -295,7 +355,7 @@
                         </li>
 
                     </ul>
-                    <!--seccion footer suscribirse-->
+                    <!--seccion suscribete-->
                     <ul class="navbar-nav ms-auto">
                         <form class="d-flex" role="suscribete">
                             <input class="form-control me-2" type="email" placeholder="@duocuc.cl" aria-label="email" />

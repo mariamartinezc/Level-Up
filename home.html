@@ -65,9 +65,7 @@
         color: #39FF14;
     }
 
-    .card-text {
-        color: #D3D3D3;
-    }
+   
 
     .btn-primary {
         background-color: #39FF14;
@@ -94,6 +92,36 @@
         color: #39FF14;
         text-align: center;
     }
+    
+    .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+    }
+
+    .card-title {
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-text {
+        flex-grow: 1;
+        color: #ffffff;
+    }
+
+    .btn-ver-detalles {
+        margin-top: auto;
+    }
 </style>
 <!-- fin estilos de respaldo -->
 <body>
@@ -118,7 +146,7 @@
                             <a class="nav-link active" aria-current="page" href="#">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">PRODUCTOS</a>
+                            <a class="nav-link" href="producto.html">PRODUCTOS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">NOSOTROS</a>
@@ -212,7 +240,7 @@
 
                             </p>
                             <div class="mt-4">
-                                <a href="#" class="btn btn-success btn-primary me-3">Ver Productos</a>
+                                <a href="producto.html" class="btn btn-success btn-primary me-3">Ver Productos</a>
                                 <a href="#" class="btn  btn-outline-secondary">Ubicacion</a>
                             </div>
                         </div>
@@ -364,7 +392,7 @@
         </nav>
 
         <div class="copyright">
-            <p>© 2025 Level-Up Gamer. Todos los derechos reservados.</p>
+            <p> 2025 Level-Up Gamer. Todos los derechos reservados.</p>
         </div>
     </footer>
 

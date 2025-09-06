@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Level-UP</title>
     <!-- Tu archivo CSS personalizado -->
-    <link rel="stylesheet" href="assets/Css/homestyle.css">
+    <link rel="stylesheet" href="assets/Css/producto.css">
     <!--icono web-->
     <link rel="icon" type="image/png" href="assets/images/LogoNuevo.png" />
 
@@ -24,14 +24,6 @@
 </head>
 <!-- estilos de respaldo -->
 <style>
-    .bienvenida {
-        background: #0c3865a3;
-        color: white;
-        border: 2px solid #1e8fff8a;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
     header {
         background-color: #1E90FF;
         padding: 10px 0;
@@ -85,6 +77,36 @@
         color: #39FF14;
         text-align: center;
     }
+
+    .card-img-top {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        border-radius: 15px;
+    }
+
+    .card-title {
+        min-height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card-text {
+        flex-grow: 1;
+        color: #666666;
+    }
+
+    .btn-ver-detalles {
+        margin-top: auto;
+    }
 </style>
 <!-- fin estilos de respaldo -->
 
@@ -107,10 +129,10 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav posicion-centro mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">HOME</a>
+                            <a class="nav-link " aria-current="page" href="home.html">HOME</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">PRODUCTOS</a>
+                            <a class="nav-link active" href="#">PRODUCTOS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">NOSOTROS</a>
@@ -169,8 +191,9 @@
 
 
             <div class="container my-5">
-                <h1 class="text-center mb-4">Productos</h1>
+                <h1 class="text-center mb-4">PRODUCTOS</h1>
                 <p class="originales mb-4">---Todos nuestros productos son 100% Originales.---</p>
+
                 <div class="row g-4">
                     <div class="col-md-4">
                         <div class="card producto h-100 shadow-lg">
@@ -227,7 +250,7 @@
                             <img src="assets/images/Mousepad.jpg" class="card-img-top"
                                 alt="Mousepad Razer Goliathus Extended Chroma:" style="width: auto; height: auto; ">
                             <div class="card-body" style=" text-align: center; ">
-                                <h3 class="card-title">Mousepad Razer Goliathus Extended Chroma:</h3>
+                                <h3 class="card-title">Mousepad Razer Goliathus Extended Chroma</h3>
                                 <p class="card-text">Ofrece un área de juego amplia con
                                     iluminación RGB personalizable, asegurando una superficie suave y uniforme para el
                                     movimiento del mouse.</p>
@@ -268,8 +291,75 @@
                     </div>
                 </div>
             </div>
+            <div class="container my-5">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card producto h-100 shadow-lg">
+                            <img src="assets/images/Carcassonne.jpg" class="card-img-top" alt="Carcassonne"
+                                style="width: auto; height: auto; ">
+                            <div class="card-body" style=" text-align: center; ">
+                                <h3 class="card-title">Carcassonne</h3>
+                                <p class="card-text">Un juego de colocación de fichas donde los jugadores construyen el
+                                    paisaje
+                                    alrededor de la fortaleza medieval de Carcassonne. Ideal para 2-5 jugadores y fácil
+                                    de
+                                    aprender.</p>
+                                <h3>$24.990 CLP </h3>
+                                <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card producto h-100 shadow-lg">
+                            <img src="assets/images/Controlador.jpg" class="card-img-top"
+                                alt="Controlador Inalámbrico Xbox Series X" style="width: auto; height: auto; ">
+                            <div class="card-body" style=" text-align: center; ">
+                                <h3 class="card-title">Controlador Inalámbrico Xbox Series X</h3>
+                                <p class="card-text"> Ofrece una experiencia de juego cómoda con
+                                    botones mapeables y una respuesta táctil mejorada. Compatible con consolas Xbox y
+                                    PC.</p>
+                                <h3>$59.990 CLP </h3>
+                                <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
 
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card producto h-100 shadow-lg">
+                            <img src="assets/images/Auriculares Gamer HyperX Cloud II.jpg" class="card-img-top"
+                                alt="Auriculares Gamer HyperX Cloud II " style="width: auto; height: auto; ">
+                            <div class="card-body" style=" text-align: center; ">
+                                <h3 class="card-title">Auriculares Gamer HyperX Cloud II</h3>
+                                <p class="card-text"> Proporcionan un sonido envolvente de calidad con un
+                                    micrófono desmontable y almohadillas de espuma viscoelástica para mayor comodidad
+                                    durante largas sesiones de juego. </p>
+                                <h3>$79.990 CLP </h3>
+                                <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container my-5">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card producto h-100 shadow-lg">
+                            <img src="assets/images/mouse.png" class="card-img-top" alt="Mouse Gamer Logitech G502 HERO"
+                                class="card-img-top" alt="Mousepad Razer Goliathus Extended Chroma:"
+                                style="width: auto; height: auto; ">
+                            <div class="card-body" style=" text-align: center; ">
+                                <h3 class="card-title">Mousepad Razer Goliathus Extended Chroma:</h3>
+                                <p class="card-text"> Con sensor de alta precisión y botones
+                                    personalizables, este mouse es ideal para gamers que buscan un control preciso y
+                                    personalización.</p>
+                                <h3>$49.990 CLP </h3>
+                                <a href="detalleproducto.html" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+
+                            </div>
+                        </div>
+                    </div>
 
 
 
@@ -311,7 +401,7 @@
         </nav>
 
         <div class="copyright">
-            <p>© 2025 Level-Up Gamer. Todos los derechos reservados.</p>
+            <p> 2025 Level-Up Gamer. Todos los derechos reservados.</p>
         </div>
     </footer>
 
