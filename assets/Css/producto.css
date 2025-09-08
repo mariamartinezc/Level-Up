@@ -12,7 +12,12 @@ body {
     color: #FFFFFF;
 }
 
-
+  .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
 footer {
     background-color: #1e8fff91;
     color: white;
