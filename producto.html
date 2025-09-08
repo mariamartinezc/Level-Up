@@ -27,8 +27,8 @@
     <link rel="stylesheet" href="assets/Css/producto.css">
 </head>
 <!-- estilos de respaldo -->
-<style>
-    /*.dropbtn {
+<!--<style>
+    .dropbtn {
         background-color: #04AA6D;
         color: white;
         padding: 16px;
@@ -186,8 +186,8 @@
         cursor: pointer;
         transition: background-color 0.3s;
     }
-</style>
-<!-- fin estilos de respaldo -->*/
+</style>-->
+<!-- fin estilos de respaldo -->
 
 <body>
     <header>
@@ -224,16 +224,37 @@
                         </li>
 
                     </ul>
-                    <!--seccion carrito-->
+                     <!--seccion carrito-->
                     <ul class="navbar-nav ms-auto">
 
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="#">
-                                <img src="assets/images/carrito-de-compras.png" alt="Logo" width="30px">
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Carrito</a>
+                        <li class="car">
+                            <!--imagen de carrito-->
+                            <!--seccion carrito-->
+                            <ul class="navbar-nav ms-auto">
+
+                                <li class="nav-item">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="assets/images/carrito-de-compras.png" alt="Logo" width="30px">
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <div id="carrito" class="dropdown-menu">
+                                <table id="lista-carrito" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+                                <a href="#" id="vaciar-carrito" class="button-vaciar">Vaciar Carrito</a>
+                                <a href="#" id="procesar-pedido" class="button-pedido">Procesar Compra</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
