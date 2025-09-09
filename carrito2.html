@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compras - LEVEL-UP GAMER</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #1E90FF;
+            --dark-bg: #000000;
+            --text-light: #FFFFFF;
+            --accent-color: #006527;
+            --gamer-green: #39FF14;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 10px 0;
+            margin-bottom: 20px;
+        }
+
+        .navbar-brand {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+        }
+
+        .text-center {
+            font-family: "Orbitron", sans-serif;
+            font-weight: 700;
+            color: var(--gamer-green);
+        }
+
+        .originales {
+            font-family: "Orbitron", sans-serif;
+            font-weight: 500;
+            color: var(--gamer-green);
+            text-align: center;
+        }
+
+        /* Estilos para el carrito */
+        .page-title {
+            text-align: center;
+            margin: 30px 0;
+            font-size: 28px;
+            color: var(--text-light);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+
+        .cart-layout {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .cart-section {
+            flex: 2;
+        }
+
+        .cart-container {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(255, 255, 255, 0.05);
+            padding: 25px;
+        }
+
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .item-info {
+            flex: 2;
+            display: flex;
+            align-items: center;
+        }
+
+        .item-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            margin-right: 15px;
+            background-color: #2a2a2a;
+        }
+
+        .item-details h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: var(--text-light);
+        }
+
+        .item-details p {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 5px;
+        }
+
+        .item-category {
+            font-size: 12px;
+            background-color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 12px;
+            display: inline-block;
+        }
+
+        .item-price {
+            flex: 1;
+            text-align: right;
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--text-light);
+        }
+
+        .item-quantity {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .quantity-control {
+            display: flex;
+            align-items: center;
+            border: 1px solid #444;
+            border-radius: 4px;
+            overflow: hidden;
+            background-color: #2a2a2a;
+        }
+
+        .quantity-btn {
+            background: #333;
+            color: white;
+            border: none;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.2s;
+        }
+
+        .quantity-btn:hover {
+            background: #444;
+        }
+
+        .quantity-input {
+            width: 40px;
+            height: 30px;
+            text-align: center;
+            border: none;
+            border-left: 1px solid #444;
+            border-right: 1px solid #444;
+            background-color: #2a2a2a;
+            color: white;
+        }
+
+        .remove-btn {
+            background: none;
+            border: none;
+            color: #aaa;
+            cursor: pointer;
+            font-size: 14px;
+            margin-left: 15px;
+            transition: color 0.2s;
+        }
+
+        .remove-btn:hover {
+            color: var(--accent-color);
+        }
+
+        .summary-section {
+            flex: 1;
+        }
+
+        .cart-summary {
+            background-color: #1a1a1a;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(255, 255, 255, 0.05);
+            padding: 25px;
+            position: sticky;
+            top: 100px;
+        }
+
+        .summary-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+        }
+
+        .summary-total {
+            font-weight: 700;
+            font-size: 20px;
+            color: var(--text-light);
+            border-bottom: none;
+            padding-top: 10px;
+        }
+
+        .coupon-section {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .coupon-input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #444;
+            border-radius: 4px 0 0 4px;
+            font-size: 14px;
+            background-color: #2a2a2a;
+            color: white;
+        }
+
+        .apply-btn {
+            background: #6c757d;
+            color: white;
+            border: none;
+            padding: 0 20px;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+
+        .apply-btn:hover {
+            background: #5a6268;
+        }
+
+        .checkout-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 4px;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s;
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .checkout-btn:hover {
+            background: #169003;
+        }
+
+        footer {
+            background-color: #1e8fff91;
+            color: white;
+            padding: 20px 0 10px;
+            margin-top: 50px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            margin-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            color: #ddd;
+            font-size: 14px;
+        }
+
+        /* Estilos para precios individuales */
+        .item-total-price {
+            font-weight: bold;
+            color: var(--gamer-green);
+            margin-left: 10px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            color: #aaa;
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+        
+        /* Ocultar fila de descuento inicialmente */
+        .discount-row {
+            display: none;
+        }
+        
+        .empty-cart {
+            text-align: center;
+            padding: 40px;
+            color: #aaa;
+        }
+        
+        .empty-cart i {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #444;
+        }
+        
+        .continue-shopping {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+        
+        .continue-shopping:hover {
+            background-color: #0d6efd;
+            color: white;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .cart-layout {
+                flex-direction: column;
+            }
+
+            .cart-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .item-info {
+                margin-bottom: 15px;
+                width: 100%;
+            }
+
+            .item-price,
+            .item-quantity {
+                align-self: flex-end;
+                margin-top: 10px;
+            }
+
+            .cart-summary {
+                position: static;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="assets/images/LogoNuevo.png" alt="Logo" width="50px">
+                    LEVEL-UP GAMER
+                </a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav posicion-centro mx-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="home.html">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="producto.html">PRODUCTOS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="noticias.html">NOSOTROS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">BLOGS</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">CONTACTO</a>
+                        </li>
+                    </ul>
+
+                    <!--seccion carrito-->
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <img src="assets/images/usuario.png" alt="Avatar" class="avatar">
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Juan Lopez</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="navbar-brand" href="#">
+                                <img src="assets/images/carrito-de-compras.png" alt="Carrito" width="30px">
+                                <span class="cart-count">3</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!--ruta producto,categoria ,detalle producto-->
+        <section>
+            <div class="container mt-3">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="home.html">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Productos</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Carrito</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
+
+        <div class="container mt-3">
+            <h1 class="text-center mb-4">Mi Carrito de Compras </h1>
+            <p class="originales mb-4">---Productos son 100% Originales.---</p>
+        </div>
+        
+        <div class="cart-layout">
+            <!-- Sección izquierda - Productos del carrito -->
+            <section class="cart-section">
+                <div class="cart-container" id="cart-items-container">
+                    <!-- Los productos del carrito se cargarán aquí dinámicamente -->
+                </div>
+            </section>
+
+            <!-- Sección derecha - Resumen de compra -->
+            <section class="summary-section">
+                <div class="cart-summary">
+                    <div class="summary-row">
+                        <span>Subtotal</span>
+                        <span>$ <span id="subtotal-value">0</span></span>
+                    </div>
+                    <!-- Fila de descuento oculta inicialmente -->
+                    <div class="summary-row discount-row" id="discount-row">
+                        <span>Descuento</span>
+                        <span>$ <span id="discount-value">0</span></span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Envío</span>
+                        <span id="shipping-value">Gratis</span>
+                    </div>
+                    <div class="summary-row summary-total">
+                        <span>TOTAL:</span>
+                        <span>$ <span id="total-value">0</span></span>
+                    </div>
+
+                    <div class="coupon-section">
+                        <input type="text" class="coupon-input" placeholder="Ingrese el cupón de descuento">
+                        <button class="apply-btn">APLICAR</button>
+                    </div>
+
+                    <button class="checkout-btn">PAGAR</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <nav class="navbar navbar-expand-lg" data-bs-theme="dark">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Consolas |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Accesorios |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Juegos de Mesa |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Computadores |</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Poleras Personalizadas </a>
+                        </li>
+                    </ul>
+
+                    <!--seccion suscribete-->
+                    <ul class="navbar-nav ms-auto">
+                        <form class="d-flex" role="suscribete">
+                            <input class="form-control me-2" type="email" placeholder="@duocuc.cl" aria-label="email">
+                            <button class="btn btn-outline-success" type="submit">Suscríbete</button>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="copyright">
+            <p> ©2025 Level-Up Gamer. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle con Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxMxD2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Datos de productos con imágenes reales
+        const products = [
+            {
+                id: "C0001",
+                name: "PlayStation 5",
+                category: "Consolas",
+                price: 549990,
+                distribuidor:"distribuidor",
+                image: "assets/images/ps5.jpg"
+            },
+            {
+                id: "AC001",
+                name: "Controlador Xbox Series X",
+                category: "Accesorios",
+                price: 59990,
+                distribuidor:"distribuidor",
+                image: "assets/images/Controlador.jpg"
+            },
+            {
+                id: "AC002",
+                name: "Auriculares HyperX Cloud II",
+                category: "Accesorios",
+                price: 79990,
+                 distribuidor:"distribuidor",
+                image: "assets/images/Auriculares Gamer HyperX Cloud II.jpg"
+            },
+            {
+                id: "JM001",
+                name: "Catan",
+                category: "Juegos de Mesa",
+                price: 29990,
+                 distribuidor:"distribuidor",
+                image: "assets/images/catan.jpg"
+            },
+            {
+                id: "JM002",
+                name: "Carcassonne",
+                category: "Juegos de Mesa",
+                price: 24990,
+                 distribuidor:"distribuidor",
+                image: "assets/images/Carcassonne.jpg"
+            },
+            {
+                id: "CG001",
+                name: "PC Gamer ASUS ROG Strix",
+                category: "Computadores Gamers",
+                price: 1299990,
+                 distribuidor:"distribuidor",
+                image: "assets/images/pc-asus.png"
+            },
+            {
+                id: "SG001",
+                name: "Silla Gamer Secretlab",
+                category: "Sillas Gamers",
+                price: 349990,
+                 distribuidor:"distribuidor",
+                image: "assets/images/Silla Gamer Secretlab Titan.jpg"
+            },
+            {
+                id: "MS001",
+                name: "Mouse Logitech G502",
+                category: "Mouse",
+                price: 49990,
+                 distribuidor:"distribuidor",
+                image: "assets/images/mouse.png"
+            },
+            {
+                id: "MP001",
+                name: "Mousepad Razer Goliathus",
+                category: "Mousepad",
+                price: 29990,
+                 distribuidor:"distribuidor",
+                image: "assets/images/Mousepad.jpg"
+            },
+            {
+                id: "PP001",
+                name: "Polera Gamer 'Level-Up'",
+                category: "Poleras Personalizadas",
+                price: 14990,
+                 distribuidor:"distribuidor",
+                image: "assets/images/poleraLEVEL-UP.png"
+            }
+        ];
+
+        // Carrito de compras (inicialmente con algunos productos)
+        let cart = [
+            { id: "C0001", quantity: 1 },
+            { id: "AC002", quantity: 1 },
+            { id: "JM001", quantity: 2 },
+            { id: "PP001", quantity: 1 },
+            { id: "MS001", quantity: 1 }
+        ];
+
+        // Función para formatear números con separadores de miles
+        function formatNumber(number) {
+            return number.toLocaleString('es-CL');
+        }
+
+        // Función para obtener un producto por ID
+        function getProductById(id) {
+            return products.find(p => p.id === id);
+        }
+
+        // Función para calcular el subtotal del carrito
+        function calculateSubtotal() {
+            return cart.reduce((total, item) => {
+                const product = getProductById(item.id);
+                return total + (product.price * item.quantity);
+            }, 0);
+        }
+
+        // Función para actualizar los totales en la UI
+        function updateTotals() {
+            const subtotal = calculateSubtotal();
+            document.getElementById('subtotal-value').textContent = formatNumber(subtotal);
+            document.getElementById('total-value').textContent = formatNumber(subtotal);
+            
+            // Actualizar contador del carrito
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            document.querySelector('.cart-count').textContent = totalItems;
+        }
+
+        // Función para actualizar la cantidad de un producto
+        function updateQuantity(id, newQuantity) {
+            const cartItem = cart.find(item => item.id === id);
+            if (cartItem) {
+                cartItem.quantity = newQuantity;
+                
+                // Actualizar total por producto en la UI
+                const itemElement = document.querySelector(`.cart-item[data-id="${id}"]`);
+                if (itemElement) {
+                    const product = getProductById(id);
+                    const totalItemValue = product.price * newQuantity;
+                    itemElement.querySelector('.total-item-value').textContent = formatNumber(totalItemValue);
+                }
+            }
+        }
+
+        // Función para eliminar un producto del carrito
+        function removeFromCart(id) {
+            cart = cart.filter(item => item.id !== id);
+            renderCartItems();
+            updateTotals();
+        }
+
+        // Función para renderizar los productos en el carrito
+        function renderCartItems() {
+            const cartContainer = document.getElementById('cart-items-container');
+            
+            if (cart.length === 0) {
+                cartContainer.innerHTML = `
+                    <div class="empty-cart">
+                        <i class="fas fa-shopping-cart"></i>
+                        <h3>Tu carrito está vacío</h3>
+                        <p>Agrega algunos productos para continuar</p>
+                        <a href="#" class="continue-shopping">Seguir comprando</a>
+                    </div>
+                `;
+                return;
+            }
+            
+            let cartHTML = '';
+            
+            cart.forEach(item => {
+                const product = getProductById(item.id);
+                if (product) {
+                    const totalPrice = product.price * item.quantity;
+                    
+                    cartHTML += `
+                        <div class="cart-item" data-id="${product.id}">
+                            <div class="item-info">
+                                <div class="item-image">
+                                    <img src="${product.image}" alt="${product.name}" width="80" height="80">
+                                </div>
+                                <div class="item-details">
+                                    <h3>${product.name}</h3>
+                                    <span class="item-category">${product.category}</span>
+                                    <p>Código: ${product.id}</p>
+                                    <p> distribuidor:${product.distribuidor}
+                                </div>
+                            </div>
+                            <div class="item-price">
+                                <span>$ <span class="price-value">${formatNumber(product.price)}</span></span>
+                                <div class="item-total-price">$ <span class="total-item-value">${formatNumber(totalPrice)}</span></div>
+                            </div>
+                            <div class="item-quantity">
+                                <div class="quantity-control">
+                                    <button class="quantity-btn minus" data-id="${product.id}">-</button>
+                                    <input type="text" class="quantity-input" value="${item.quantity}" min="1" data-id="${product.id}">
+                                    <button class="quantity-btn plus" data-id="${product.id}">+</button>
+                                </div>
+                                <button class="remove-btn" data-id="${product.id}"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            
+            cartContainer.innerHTML = cartHTML;
+            
+            // Agregar eventos a los botones
+            addEventListeners();
+        }
+
+        // Función para agregar event listeners
+        function addEventListeners() {
+            // Delegación de eventos para los botones de cantidad
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('quantity-btn')) {
+                    const id = e.target.getAttribute('data-id');
+                    const input = document.querySelector(`.quantity-input[data-id="${id}"]`);
+                    let value = parseInt(input.value);
+                    
+                    if (e.target.classList.contains('plus')) {
+                        value++;
+                    } else if (e.target.classList.contains('minus') && value > 1) {
+                        value--;
+                    }
+                    
+                    input.value = value;
+                    updateQuantity(id, value);
+                    updateTotals();
+                }
+                
+                if (e.target.classList.contains('remove-btn') || e.target.closest('.remove-btn')) {
+                    const btn = e.target.classList.contains('remove-btn') ? e.target : e.target.closest('.remove-btn');
+                    const id = btn.getAttribute('data-id');
+                    removeFromCart(id);
+                }
+            });
+            
+            // Eventos para los inputs de cantidad
+            document.addEventListener('change', function(e) {
+                if (e.target.classList.contains('quantity-input')) {
+                    const id = e.target.getAttribute('data-id');
+                    let value = parseInt(e.target.value);
+                    
+                    if (value < 1) {
+                        value = 1;
+                        e.target.value = 1;
+                    }
+                    
+                    updateQuantity(id, value);
+                    updateTotals();
+                }
+            });
+            
+            // Validar inputs de cantidad
+            document.addEventListener('input', function(e) {
+                if (e.target.classList.contains('quantity-input')) {
+                    e.target.value = e.target.value.replace(/[^0-9]/g, '');
+                }
+            });
+            
+            // Cupón de descuento
+            document.querySelector('.apply-btn').addEventListener('click', applyCoupon);
+            
+            // Botón de pago
+            document.querySelector('.checkout-btn').addEventListener('click', checkout);
+        }
+
+        // Función para aplicar cupón de descuento
+        function applyCoupon() {
+            const couponCode = document.querySelector('.coupon-input').value;
+            const discountRow = document.getElementById('discount-row');
+            
+            if (couponCode.trim() === 'Duoc') {
+                const subtotal = calculateSubtotal();
+                const discount = Math.round(subtotal * 0.2);
+                const newTotal = subtotal - discount;
+
+                discountRow.style.display = 'flex';
+                document.getElementById('discount-value').textContent = formatNumber(discount);
+                document.getElementById('total-value').textContent = formatNumber(newTotal);
+
+                alert(`¡Cupón "${couponCode}" aplicado! Se ha aplicado un 20% de descuento.`);
+            } else {
+                alert('Cupón no válido. Intente con "Duoc" para obtener un 20% de descuento.');
+            }
+        }
+
+        // Función para procesar el pago
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Tu carrito está vacío. Agrega productos antes de pagar.');
+                return;
+            }
+            alert('Redirigiendo al proceso de pago...');
+            // Aquí se redirigiría a la página de checkout
+        }
+
+        // Inicializar la página
+        document.addEventListener('DOMContentLoaded', function() {
+            renderCartItems();
+            updateTotals();
+        });
+    </script>
+</body>
+
+</html>
