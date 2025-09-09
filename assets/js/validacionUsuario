@@ -1,0 +1,55 @@
+function calculoEdad() {
+    
+    var fechaNac = document.getElementById("fechaNacimiento").value;
+    
+    if (!fechaNac) {
+        return "Por favor ingresa una fecha.";
+    }
+
+    var hoy = new Date();
+    var nacimiento = new Date(fechaNac);
+
+    var anios = hoy.getFullYear() - nacimiento.getFullYear();
+    var mes = hoy.getMonth() - nacimiento.getMonth();
+
+    // Ajuste si aún no cumplió años este año
+    if (mes < 0 || (mes === 0 && hoy.getDate() < nacimiento.getDate())) {
+        anios--;
+    }
+
+    return anios;}
+
+function esMayorDeEdad() {
+    var edad = calculoEdad(); 
+
+    if (edad === null) {
+        alert("Por favor ingresa una fecha de nacimiento.");
+        return false;
+    }
+
+    if (edad >= 18) {
+        alert("Eres mayor de edad. Edad: " + edad);
+        return true;
+    } else {
+        alert("No eres mayor de edad. Edad: " + edad);
+        return false;
+    }
+}
+
+function descuentoDuoc(){
+    var correo = document.getElementById("email").value
+    if (correo === null) {
+        alert("Por favor ingresar email");
+        return false;
+    }
+
+    if (correo.toLowerCase().endsWith("@duocuc.cl")) {
+        alert("Felicidadaes, obtienes 20% dcto.");
+        return true;
+    } else {
+        alert("Registro sin Descuento");
+        return false;
+    }
+
+
+}
