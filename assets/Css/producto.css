@@ -169,3 +169,35 @@ footer {
     margin-right: 8px;
     font-size: 1.2rem;
 }
+
+    .whatsapp-fixed {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        animation: pulse 1.5s infinite;
+    }
+    
+    .whatsapp-fixed a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #25D366;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+    
+    .whatsapp-fixed a:hover {
+        background-color: #128C7E;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5);
+    }
+    
+    .whatsapp-fixed i {
+        font-size: 1.2rem;
+    }
