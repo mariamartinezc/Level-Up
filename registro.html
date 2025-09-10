@@ -431,7 +431,7 @@
         function esMayorDeEdad(fechaNac) {
 
             var edad = calculoEdad(fechaNac);
-
+            console.log(edad)
             if (edad === null) {
                 return false;
             }
@@ -447,15 +447,18 @@
 
         //Metodo para validar Fecha de Nacimiento
 
-        function validarFechaNacimiento(fechaNac) {
+        function validarFechaNacimiento() {
             console.log("validarFechaNacimiento");
-            var regexFechNac = /^(0?[1-9]|[12][0-9]|3[01])[\/](0?[1-9]|1[0-2])[\/]\d{4}$/;
+
+            var regexFechNac = /^\d{4}-(0[1-9]|1[0-2])-(0[1-9]|[12][0-9]|3[01])$/;
             var fechNac = document.getElementById("fechaNacimiento").value;
+            console.log(validarCeldaVacia(fechNac));
+            console.log(regexFechNac.test(fechNac));
 
             if (validarCeldaVacia(fechNac) &&
                 regexFechNac.test(fechNac) &&
                 esMayorDeEdad(fechNac)) {
-                document.getElementById("fechNacErrorr").style.display = 'none';
+                document.getElementById("fechNacError").style.display = 'none';
                 return true;
             } else {
                 document.getElementById("fechNacError").style.display = 'block';
