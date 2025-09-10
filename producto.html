@@ -26,168 +26,6 @@
     <!-- Tu archivo CSS personalizado -->
     <link rel="stylesheet" href="assets/Css/producto.css">
 </head>
-<!-- estilos de respaldo -->
-<!--<style>
-    .dropbtn {
-        background-color: #04AA6D;
-        color: white;
-        padding: 16px;
-        font-size: 16px;
-        border: none;
-        cursor: pointer;
-    }
-
-    .dropbtn:hover,
-    .dropbtn:focus {
-        background-color: #3e8e41;
-    }
-
-    #myInput {
-        box-sizing: border-box;
-        background-image: url('searchicon.png');
-        background-position: 14px 12px;
-        background-repeat: no-repeat;
-        font-size: 16px;
-        padding: 14px 20px 12px 45px;
-        border: none;
-        border-bottom: 1px solid #ddd;
-    }
-
-    #myInput:focus {
-        outline: 3px solid #ddd;
-    }
-
-    .dropdown {
-        position: relative;
-        display: inline-block;
-    }
-
-    .dropdown-content {
-        display: none;
-        position: absolute;
-        background-color: #f6f6f6;
-        min-width: 230px;
-        overflow: auto;
-        border: 1px solid #ddd;
-        z-index: 1;
-    }
-
-    .dropdown-content a {
-        color: black;
-        padding: 12px 16px;
-        text-decoration: none;
-        display: block;
-    }
-
-    .dropdown a:hover {
-        background-color: #ddd;
-    }
-
-    .show {
-        display: block;
-    }
-
-    header {
-        background-color: #1E90FF;
-        padding: 10px 0;
-        margin-bottom: 20px;
-    }
-
-    body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #000000;
-        margin: 0;
-        padding: 0;
-        color: #FFFFFF;
-    }
-
-
-    footer {
-        background-color: #1e8fff91;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 20px;
-    }
-
-    .categorias {
-        position: relative;
-    }
-
-
-    .btn-primary {
-        background-color: #39FF14;
-        border: none;
-    }
-
-    .producto {
-        background: #0c3865a3;
-        color: white;
-        border: 2px solid #1e8fff8a;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
-    .text-center {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 700;
-        color: #39FF14;
-    }
-
-    .originales {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 500;
-        color: #39FF14;
-        text-align: center;
-    }
-
-    .card-img-top {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        padding: 15px;
-        border-radius: 15px;
-    }
-
-    .card-body {
-        display: flex;
-        flex-direction: column;
-        border-radius: 15px;
-    }
-
-    .card-title {
-        min-height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card-text {
-        flex-grow: 1;
-        color: #666666;
-    }
-
-    .btn-ver-detalles {
-        margin-top: auto;
-    }
-
-    .filter-container {
-        margin-bottom: 20px;
-        text-align: center;
-    }
-
-    .filter-btn {
-        background-color: #39FF14;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        margin: 5px;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-</style>-->
-<!-- fin estilos de respaldo -->
 
 <body>
     <header>
@@ -214,10 +52,10 @@
                             <a class="nav-link active" href="#">PRODUCTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="noticias.html">NOSOTROS</a>
+                            <a class="nav-link" href="nosotros.html">NOSOTROS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">BLOGS</a>
+                            <a class="nav-link" href="blog.html">BLOGS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">CONTACTO</a>
@@ -333,125 +171,135 @@
                                     <h3>$29.990 CLP </h3>
                                     <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 producto-item" data-category="consolas">
-                            <div class="card producto h-100 shadow-lg">
-                                <img src="assets/images/ps5.jpg" class="card-img-top" alt="ps5"
-                                    style="width: auto; height: auto; ">
-                                <div class="card-body" style=" text-align: center; ">
-                                    <h3 class="card-title">PlayStation 5 </h3>
-                                    <p class="card-text"> La consola de última generación de Sony, que ofrece gráficos
-                                        impresionantes y tiempos de carga ultrarrápidos para una experiencia de juego
-                                        inmersiva. </p>
-                                    <h3>$549.990 CLP </h3>
-                                    <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+                            <div class="col-md-4 producto-item" data-category="consolas">
+                                <div class="card producto h-100 shadow-lg">
+                                    <img src="assets/images/ps5.jpg" class="card-img-top" alt="ps5"
+                                        style="width: auto; height: auto; ">
+                                    <div class="card-body" style=" text-align: center; ">
+                                        <h3 class="card-title">PlayStation 5 </h3>
+                                        <p class="card-text"> La consola de última generación de Sony, que ofrece
+                                            gráficos
+                                            impresionantes y tiempos de carga ultrarrápidos para una experiencia de
+                                            juego
+                                            inmersiva. </p>
+                                        <h3>$549.990 CLP </h3>
+                                        <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 producto-item" data-category="ropa">
-                            <div class="card producto h-100 shadow-lg">
-                                <img src="assets/images/poleraLEVEL-UP.png" class="card-img-top" alt="Polera Level-UP"
-                                    style="width: auto; height: auto; ">
-                                <div class="card-body" style=" text-align: center; ">
-                                    <h3 class="card-title">Polera Level-UP personalizada</h3>
-                                    <p class="card-text">Una camiseta cómoda y estilizada, con la
-                                        posibilidad de personalizarla con tu gamer tag o diseño favorito. </p>
-                                    <h3>$14.990 CLP </h3>
-                                    <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+                            <div class="col-md-4 producto-item" data-category="ropa">
+                                <div class="card producto h-100 shadow-lg">
+                                    <img src="assets/images/poleraLEVEL-UP.png" class="card-img-top"
+                                        alt="Polera Level-UP" style="width: auto; height: auto; ">
+                                    <div class="card-body" style=" text-align: center; ">
+                                        <h3 class="card-title">Polera Level-UP personalizada</h3>
+                                        <p class="card-text">Una camiseta cómoda y estilizada, con la
+                                            posibilidad de personalizarla con tu gamer tag o diseño favorito. </p>
+                                        <h3>$14.990 CLP </h3>
+                                        <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="container my-5">
-                    <div class="row g-4">
-                        <div class="col-md-4 producto-item" data-category="accesorios">
-                            <div class="card producto h-100 shadow-lg">
-                                <img src="assets/images/Mousepad.jpg" class="card-img-top"
-                                    alt="Mousepad Razer Goliathus Extended Chroma:" style="width: auto; height: auto; ">
-                                <div class="card-body" style=" text-align: center; ">
-                                    <h3 class="card-title">Mousepad Razer Goliathus Extended Chroma</h3>
-                                    <p class="card-text">Ofrece un área de juego amplia con
-                                        iluminación RGB personalizable, asegurando una superficie suave y uniforme para
-                                        el
-                                        movimiento del mouse.</p>
-                                    <h3>$29.990 CLP </h3>
-                                    <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+                    <div class="container my-5">
+                        <div class="row g-4">
+                            <div class="col-md-4 producto-item" data-category="accesorios">
+                                <div class="card producto h-100 shadow-lg">
+                                    <img src="assets/images/Mousepad.jpg" class="card-img-top"
+                                        alt="Mousepad Razer Goliathus Extended Chroma:"
+                                        style="width: auto; height: auto; ">
+                                    <div class="card-body" style=" text-align: center; ">
+                                        <h3 class="card-title">Mousepad Razer Goliathus Extended Chroma</h3>
+                                        <p class="card-text">Ofrece un área de juego amplia con
+                                            iluminación RGB personalizable, asegurando una superficie suave y uniforme
+                                            para
+                                            el
+                                            movimiento del mouse.</p>
+                                        <h3>$29.990 CLP </h3>
+                                        <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 producto-item" data-category="accesorios">
-                            <div class="card producto h-100 shadow-lg">
-                                <img src="assets/images/Silla Gamer Secretlab Titan.jpg" class="card-img-top"
-                                    alt="Silla Gamer Secretlab Titan" style="width: auto; height: auto; ">
-                                <div class="card-body" style=" text-align: center; ">
-                                    <h3 class="card-title">Silla Gamer Secretlab Titan</h3>
-                                    <p class="card-text"> Diseñada para el máximo confort, esta silla ofrece un soporte
-                                        ergonómico y personalización ajustable para sesiones de juego prolongadas. </p>
-                                    <h3>$349.990 CLP </h3>
-                                    <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+                            <div class="col-md-4 producto-item" data-category="accesorios">
+                                <div class="card producto h-100 shadow-lg">
+                                    <img src="assets/images/Silla Gamer Secretlab Titan.jpg" class="card-img-top"
+                                        alt="Silla Gamer Secretlab Titan" style="width: auto; height: auto; ">
+                                    <div class="card-body" style=" text-align: center; ">
+                                        <h3 class="card-title">Silla Gamer Secretlab Titan</h3>
+                                        <p class="card-text"> Diseñada para el máximo confort, esta silla ofrece un
+                                            soporte
+                                            ergonómico y personalización ajustable para sesiones de juego prolongadas.
+                                        </p>
+                                        <h3>$349.990 CLP </h3>
+                                        <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
 
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4 producto-item" data-category="computadores">
-                            <div class="card producto h-100 shadow-lg">
-                                <img src="assets/images/pc-asus.png" class="card-img-top" alt="PC Gamer ASUS ROG Strix"
-                                    style="width: auto; height: auto; ">
-                                <div class="card-body" style=" text-align: center; ">
-                                    <h3 class="card-title">PC Gamer ASUS ROG Strix</h3>
-                                    <p class="card-text">Un potente equipo diseñado para los gamers más exigentes,
-                                        equipado con los últimos componentes para ofrecer un rendimiento excepcional en
-                                        cualquier juego. </p>
-                                    <h3>$1.299.990 CLP </h3>
-                                    <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+                            <div class="col-md-4 producto-item" data-category="computadores">
+                                <div class="card producto h-100 shadow-lg">
+                                    <img src="assets/images/pc-asus.png" class="card-img-top"
+                                        alt="PC Gamer ASUS ROG Strix" style="width: auto; height: auto; ">
+                                    <div class="card-body" style=" text-align: center; ">
+                                        <h3 class="card-title">PC Gamer ASUS ROG Strix</h3>
+                                        <p class="card-text">Un potente equipo diseñado para los gamers más exigentes,
+                                            equipado con los últimos componentes para ofrecer un rendimiento excepcional
+                                            en
+                                            cualquier juego. </p>
+                                        <h3>$1.299.990 CLP </h3>
+                                        <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
 
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="container my-5">
-                    <div class="row g-4">
-                        <div class="col-md-4 producto-item" data-category="juegos-mesa">
-                            <div class="card producto h-100 shadow-lg">
-                                <img src="assets/images/Carcassonne.jpg" class="card-img-top" alt="Carcassonne"
-                                    style="width: auto; height: auto; ">
-                                <div class="card-body" style=" text-align: center; ">
-                                    <h3 class="card-title">Carcassonne</h3>
-                                    <p class="card-text">Un juego de colocación de fichas donde los jugadores construyen
-                                        el
-                                        paisaje
-                                        alrededor de la fortaleza medieval de Carcassonne. Ideal para 2-5 jugadores y
-                                        fácil
-                                        de
-                                        aprender.</p>
-                                    <h3>$24.990 CLP </h3>
-                                    <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+                    <div class="container my-5">
+                        <div class="row g-4">
+                            <div class="col-md-4 producto-item" data-category="juegos-mesa">
+                                <div class="card producto h-100 shadow-lg">
+                                    <img src="assets/images/Carcassonne.jpg" class="card-img-top" alt="Carcassonne"
+                                        style="width: auto; height: auto; ">
+                                    <div class="card-body" style=" text-align: center; ">
+                                        <h3 class="card-title">Carcassonne</h3>
+                                        <p class="card-text">Un juego de colocación de fichas donde los jugadores
+                                            construyen
+                                            el
+                                            paisaje
+                                            alrededor de la fortaleza medieval de Carcassonne. Ideal para 2-5 jugadores
+                                            y
+                                            fácil
+                                            de
+                                            aprender.</p>
+                                        <h3>$24.990 CLP </h3>
+                                        <a href="#" class="btn btn-success btn-primary me-3">Ver Detalles</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="col-md-4 producto-item" data-category="accesorios">
-                            <div class="card producto h-100 shadow-lg">
-                                <img src="assets/images/mouse.png" class="card-img-top"
-                                    alt="Mouse Gamer Logitech G502 HERO " style="width: auto; height: auto; ">
-                                <div class="card-body" style=" text-align: center; ">
-                                    <h3 class="card-title">Mouse Gamer Logitech G502 HERO</h3>
-                                    <p class="card-text"> Con sensor de alta precisión y botones
-                                        personalizables, este mouse es ideal para gamers que buscan un control preciso y
-                                        personalización.</p>
-                                    <h3>$49.990 CLP </h3>
-                                    <a href="detalleproducto.html" class="btn btn-success btn-primary me-3">Ver
-                                        Detalles</a>
+                            <div class="col-md-4 producto-item" data-category="accesorios">
+                                <div class="card producto h-100 shadow-lg">
+                                    <img src="assets/images/mouse.png" class="card-img-top"
+                                        alt="Mouse Gamer Logitech G502 HERO " style="width: auto; height: auto; ">
+                                    <div class="card-body" style=" text-align: center; ">
+                                        <h3 class="card-title">Mouse Gamer Logitech G502 HERO</h3>
+                                        <p class="card-text"> Con sensor de alta precisión y botones
+                                            personalizables, este mouse es ideal para gamers que buscan un control
+                                            preciso y
+                                            personalización.</p>
+                                        <h3>$49.990 CLP </h3>
+                                        <a href="detalleproducto.html" class="btn btn-success btn-primary me-3">Ver
+                                            Detalles</a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
 
 
@@ -492,6 +340,14 @@
                 </div>
             </div>
         </nav>
+
+        <!--Botón Soporte Whatsapp-->
+        <div class="whatsapp-fixed">
+            <a href="https://wa.me/+56950930673?text=Hola, Quisiera inscribirme en la plataforma de Level-Up Gamer"
+                target="_blank">
+                <i class="bi bi-whatsapp"></i> Chatear por WhatsApp
+            </a>
+        </div>
 
         <div class="copyright">
             <p> ©2025 Level-Up Gamer. Todos los derechos reservados.</p>

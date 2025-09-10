@@ -10,7 +10,8 @@
 
     <!--icono web-->
     <link rel="icon" type="image/png" href="assets/images/LogoNuevo.png" />
-
+    <!--Boton Whatsapp-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
@@ -23,109 +24,7 @@
     <!-- Tu archivo CSS personalizado -->
     <link rel="stylesheet" href="assets/Css/homestyle.css">
 </head>
-<!-- estilos de respaldo -->
 
-<!-- <style>
-    .bienvenida {
-        background: #0c3865a3;
-        color: white;
-        border: 2px solid #1e8fff8a;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
-    header {
-        background-color: #1E90FF;
-        padding: 10px 0;
-        margin-bottom: 20px;
-    }
-
-    body {
-        font-family: 'Roboto', sans-serif;
-        background-color: #000000;
-        margin: 0;
-        padding: 0;
-        color: #FFFFFF;
-    }
-
-
-    footer {
-        background-color: #1e8fff91;
-        color: white;
-        text-align: center;
-        padding: 10px 0;
-        margin-top: 20px;
-    }
-
-    .categorias {
-        position: relative;
-    }
-
-    .bienvenido-titulo {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 700;
-        color: #39FF14;
-    }
-
-
-
-    .btn-primary {
-        background-color: #39FF14;
-        border: none;
-    }
-
-    .destacado {
-        background: #0c3865a3;
-        color: white;
-        border: 2px solid #1e8fff8a;
-        border-radius: 15px;
-        overflow: hidden;
-    }
-
-    .text-center {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 700;
-        color: #39FF14;
-    }
-
-    .originales {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 500;
-        color: #39FF14;
-        text-align: center;
-    }
-
-    .card-img-top {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        padding: 15px;
-        border-radius: 15px;
-    }
-
-    .card-body {
-        display: flex;
-        flex-direction: column;
-        border-radius: 15px;
-    }
-
-    .card-title {
-        min-height: 60px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .card-text {
-        flex-grow: 1;
-        color: #ffffff;
-    }
-
-    .btn-ver-detalles {
-        margin-top: auto;
-    }
-</style>-->
-<!-- fin estilos de respaldo -->
 
 <body>
     <header>
@@ -152,10 +51,10 @@
                             <a class="nav-link" href="producto.html">PRODUCTOS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="noticias.html">NOSOTROS</a>
+                            <a class="nav-link" href="nosotros.html">NOSOTROS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">BLOGS</a>
+                            <a class="nav-link" href="blog.html">BLOGS</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">CONTACTO</a>
@@ -195,7 +94,7 @@
                             <a class="nav-link active" aria-current="page" href="registro.html">Registro</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="registro.html">Login</a>
+                            <a class="nav-link" href="registro.html#tab-login">Login</a>
                         </li>
                     </ul>
                 </div>
@@ -393,13 +292,24 @@
                 </div>
             </div>
         </nav>
+        <!--Botón Soporte Whatsapp-->
+        <div class="whatsapp-fixed">
+            <a href="https://wa.me/+56950930673?text=Hola, Quisiera inscribirme en la plataforma de Level-Up Gamer"
+                target="_blank">
+                <i class="bi bi-whatsapp"></i> Chatear por WhatsApp
+            </a>
+        </div>
         <div class="mb-space-32 hidden gap-[10px] pt-[1px] md:flex lg:flex-col"><a
                 data-testid="download-apple-store-link" aria-label="Descargar en la App Store" role="link" tabindex="0"
-                href="https://open.shop.app/E2jp6/yphyl/7qog?sid=9b125505-805f-4029-af42-0c04c903f8e1"><img style = "width: 9%"
-                    src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg" class="h-space-40" alt="Descargar Shop"></a><a
-                data-testid="download-play-store-link" aria-label="Descargar en Google Play" role="link" tabindex="0"
-                href="https://open.shop.app/E2jp6/frmk/3n2h?sid=9b125505-805f-4029-af42-0c04c903f8e1"><img style = "width: 9%"
-                    src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png" class="h-space-40" alt="Descargar Shop"></a></div>
+                href="https://open.shop.app/E2jp6/yphyl/7qog?sid=9b125505-805f-4029-af42-0c04c903f8e1"><img
+                    style="width: 9%"
+                    src="https://developer.apple.com/app-store/marketing/guidelines/images/badge-download-on-the-app-store.svg"
+                    class="h-space-40" alt="Descargar Shop"></a><a data-testid="download-play-store-link"
+                aria-label="Descargar en Google Play" role="link" tabindex="0"
+                href="https://open.shop.app/E2jp6/frmk/3n2h?sid=9b125505-805f-4029-af42-0c04c903f8e1"><img
+                    style="width: 9%"
+                    src="https://play.google.com/intl/en_us/badges/static/images/badges/es_badge_web_generic.png"
+                    class="h-space-40" alt="Descargar Shop"></a></div>
         <div class="copyright">
             <p> ©2025 Level-Up Gamer. Todos los derechos reservados.</p>
         </div>

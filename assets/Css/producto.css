@@ -138,3 +138,107 @@ footer {
   border-radius: 50%;
   width: "10px";
 }
+
+.social-section {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    margin-top: 30px;
+}
+
+.social-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.social-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    color: white;
+}
+
+.facebook-btn {
+    background-color: #3b5998;
+}
+
+.facebook-btn:hover {
+    background-color: #2d4373;
+}
+
+.instagram-btn {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.instagram-btn:hover {
+    background: linear-gradient(45deg, #da7e2c, #cf5536, #c22145, #b21c5c, #a21575);
+}
+
+.twitter-btn {
+    background-color: #1da1f2;
+}
+
+.twitter-btn:hover {
+    background-color: #0d8bd9;
+}
+
+.whatsapp-btn {
+    background-color: #25d366;
+}
+
+.whatsapp-btn:hover {
+    background-color: #128c7e;
+}
+
+.social-icon {
+    margin-right: 8px;
+    font-size: 1.2rem;
+}
+
+    .whatsapp-fixed {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        z-index: 1000;
+        animation: pulse 1.5s infinite;
+    }
+    
+    .whatsapp-fixed a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        background-color: #25D366;
+        color: white;
+        text-decoration: none;
+        padding: 12px 20px;
+        border-radius: 50px;
+        box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
+        transition: all 0.3s ease;
+        font-weight: 500;
+    }
+    
+    .whatsapp-fixed a:hover {
+        background-color: #128C7E;
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(37, 211, 102, 0.5);
+    }
+    
+    .whatsapp-fixed i {
+        font-size: 1.2rem;
+    }
