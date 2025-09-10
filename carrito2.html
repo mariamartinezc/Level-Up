@@ -719,7 +719,7 @@
                                     <h3>${product.name}</h3>
                                     <span class="item-category">${product.category}</span>
                                     <p>Código: ${product.id}</p>
-                                    <p> Distribuidor:${product.distribuidor}
+                                    <p> Distribuidor: ${product.distribuidor}</p>
                                 </div>
                             </div>
                             <div class="item-price">
@@ -803,13 +803,19 @@
         }
 
         // Función para aplicar cupón de descuento
+      
         function applyCoupon() {
-            const couponCode = document.querySelector('.coupon-input').value;
+            const couponCode = document.querySelector('.coupon-input').value.trim();
             const discountRow = document.getElementById('discount-row');
-            //Al escribir Duoc se aplica un 20% de descuento 
-            if (couponCode.trim() === 'Duoc') {
-                const subtotal = calculateSubtotal();
-                const discount = Math.round(subtotal * 0.2);
+
+            // Reiniciar descuento
+            discountRow.style.display = 'none';
+            const subtotal = calculateSubtotal();
+            document.getElementById('total-value').textContent = formatNumber(subtotal);
+
+            // Verificar códigos de descuento
+            if (couponCode === 'Duoc') {
+                const discount = Math.round(subtotal * 0.2); // 20% de descuento
                 const newTotal = subtotal - discount;
 
                 discountRow.style.display = 'flex';
@@ -817,8 +823,22 @@
                 document.getElementById('total-value').textContent = formatNumber(newTotal);
 
                 alert(`¡Cupón "${couponCode}" aplicado! Se ha aplicado un 20% de descuento.`);
-            } else {
-                alert('Cupón no válido. Intente con "Duoc" para obtener un 20% de descuento.');
+            }
+            else if (couponCode === 'FELICES50') {
+                const discount = Math.round(subtotal * 0.1); // 10% de descuento
+                const newTotal = subtotal - discount;
+
+                discountRow.style.display = 'flex';
+                document.getElementById('discount-value').textContent = formatNumber(discount);
+                document.getElementById('total-value').textContent = formatNumber(newTotal);
+
+                alert(`¡Cupón "${couponCode}" aplicado! Se ha aplicado un 10% de descuento.`);
+            }
+            else if (couponCode === '') {
+                alert('Por favor, ingrese un código de descuento.');
+            }
+            else {
+                alert('Cupón no válido. Intente con "Duoc" para 20% de descuento o "Gamer" para 10% de descuento.');
             }
         }
 
