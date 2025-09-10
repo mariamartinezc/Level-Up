@@ -191,22 +191,22 @@
                         <li class="car">
                             <!--imagen de carrito-->
                             <!--seccion carrito-->
-                           
-                             <!--seccion carrito-->
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <img src="assets/images/usuario.png" alt="Avatar" class="avatar">
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Juan Lopez</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="#">
-                                <img src="assets/images/carrito-de-compras.png" alt="Carrito" width="30px">
-                                <span class="cart-count">5</span>
-                            </a>
-                        </li>
-                    </ul>
+
+                            <!--seccion carrito-->
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <img src="assets/images/usuario.png" alt="Avatar" class="avatar">
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="#">Juan Lopez</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="assets/images/carrito-de-compras.png" alt="Carrito" width="30px">
+                                        <span class="cart-count">5</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                     </ul>
                 </div>
@@ -256,6 +256,7 @@
 
             </div>
         </section>
+
         <section>
 
             <!-- Detalle del Producto -->
@@ -295,8 +296,10 @@
                                         Carrito</a>
                                     <a href="producto.html" class="btn btn-outline-secondary">Volver</a>
                                 </div>
+
                             </div>
                         </div>
+
                     </div>
                 </div>
             </section>
@@ -311,6 +314,7 @@
                 <h1 class="text-center mb-4">--Productos Relacionados--</h1>
             </div>
         </section>
+
         <!-- Productos Relacionados -->
         <section class="producto-relacionado my-5">
             <div class="container">
@@ -356,8 +360,37 @@
             </div>
 
         </section>
-
-
+          <section>
+            <div class="container mt-3">
+                <h1 class="text-center mb-4">--Reseña y comentario--</h1>
+            </div>
+        </section>
+        <!-- Reseña del producto -->
+        <section class="container my-5">
+            <div class="card detalleproducto shadow-lg">
+                <div class="card-body">
+                    <!-- Formulario para agregar reseña -->
+                    <form id="formResena" class="mb-4">
+                        <div class="mb-3">
+                            <label for="nombreResena" class="form-label">Tu nombre</label>
+                            <input type="text" class="form-control" id="nombreResena" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="textoResena" class="form-label">Tu reseña</label>
+                            <textarea class="form-control" id="textoResena" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success">Enviar Reseña</button>
+                    </form>
+                    <!-- Historial de reseñas -->
+                    <div id="historialResenas">
+                        <h5>Historial de Reseñas:</h5>
+                        <ul class="list-group" id="listaResenas">
+                            <!-- Las reseñas aparecerán aquí -->
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
     </main>
     <footer>
@@ -404,7 +437,47 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
-    <!--
+<script>
+ // Manejo de reseñas en localStorage
+ document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('formResena');
+      const lista = document.getElementById('listaResenas');
+      const STORAGE_KEY = 'reseñas_mouse_g502';
+
+      // Borrar reseñas al cargar la página
+      localStorage.removeItem(STORAGE_KEY);
+
+      // Cargar reseñas guardadas
+      function cargarResenas() {
+            lista.innerHTML = '';
+            const resenas = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+            resenas.forEach(resena => {
+                 const li = document.createElement('li');
+                 li.className = 'list-group-item';
+                 li.innerHTML = `<strong>${resena.nombre}:</strong> ${resena.texto}`;
+                 lista.appendChild(li);
+            });
+      }
+
+      // Guardar nueva reseña
+      form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            const nombre = document.getElementById('nombreResena').value.trim();
+            const texto = document.getElementById('textoResena').value.trim();
+            if (nombre && texto) {
+                 const resenas = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+                 resenas.push({ nombre, texto });
+                 localStorage.setItem(STORAGE_KEY, JSON.stringify(resenas));
+                 form.reset();
+                 cargarResenas();
+            }
+      });
+
+      cargarResenas();
+ });
+</script>
+   
+        <!--
     <script>
         // productos.js
         const productos = [
