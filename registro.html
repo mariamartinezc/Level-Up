@@ -54,7 +54,7 @@
                             <a class="nav-link" href="blog.html">BLOGS</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">CONTACTO</a>
+                            <a class="nav-link" href="contacto.html">CONTACTO</a>
                         </li>
 
                     </ul>
@@ -473,7 +473,7 @@
             console.log("Validar correo");
 
             const correo = document.getElementById("email").value.trim();
-            const regexCorreo = /^[a-zA-Z0-9._%+-]+@duocuc.cl|@profesor.duoc.cl$/
+            const regexCorreo = /^[a-zA-Z0-9._%+-]+@duocuc.cl|@profesor.duoc.cl|@gmail.com$/;
 
             if (validarCeldaVacia(correo) && regexCorreo.test(correo)) {
                 document.getElementById("emailError").style.display = 'none';
@@ -488,7 +488,7 @@
 
         function validarConfCorreo() {
             console.log("validarConfCorreo");
-            var regexConfCorreo = /^[a-zA-Z0-9._%+-]+@(duocuc\.cl|profesor\.duoc\.cl)$/;
+            var regexConfCorreo = /^[a-zA-Z0-9._%+-]+@duocuc.cl|@profesor.duoc.cl|@gmail.com$/;
             var txtConfCorreo = document.getElementById("confirmarEmail").value;
 
             if (validarCeldaVacia(txtConfCorreo) &&
