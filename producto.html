@@ -27,7 +27,6 @@
     <link rel="stylesheet" href="assets/Css/producto.css">
 </head>
 
-
 <body>
     <header>
 
@@ -66,13 +65,34 @@
                     <!--seccion carrito-->
                     <ul class="navbar-nav ms-auto">
 
-                        <li class="nav-item">
-                            <a class="navbar-brand" href="#">
-                                <img src="assets/images/carrito-de-compras.png" alt="Logo" width="30px">
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Carrito</a>
+                        <li class="car">
+                            <!--imagen de carrito-->
+                            <!--seccion carrito-->
+                            <ul class="navbar-nav ms-auto">
+
+                                <li class="nav-item">
+                                    <a class="navbar-brand" href="#">
+                                        <img src="assets/images/carrito-de-compras.png" alt="Logo" width="30px">
+                                    </a>
+                                </li>
+
+                            </ul>
+                            <div id="carrito" class="dropdown-menu">
+                                <table id="lista-carrito" class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Imagen</th>
+                                            <th>Nombre</th>
+                                            <th>Precio</th>
+                                            <th></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+
+                                <a href="#" id="vaciar-carrito" class="button-vaciar">Vaciar Carrito</a>
+                                <a href="#" id="procesar-pedido" class="button-pedido">Procesar Compra</a>
+                            </div>
                         </li>
                     </ul>
                 </div>
@@ -335,30 +355,44 @@
     </footer>
     <!-- JavaScript para el filtrado y reorganización -->
     <script>
+        //Esperar a que todoo el documento HTML este completamente cargado
         document.addEventListener('DOMContentLoaded', function () {
+            //Selecciona todos los botones de filtro
+            //como las categorias que se encuentran en el filtrado TODOS ,JUEGOS DE MESA,CONSOLAS, ACCESORIOS,COMPUTADORES,ROPA
             const filterButtons = document.querySelectorAll('.filter-btn');
+            //Selecciona todos los items de productos 
+
             const productItems = document.querySelectorAll('.producto-item');
-
+            //Para cada boton de filtro
             filterButtons.forEach(button => {
+                //Agrega un evento de click a cada boton que ocurra algo
+
                 button.addEventListener('click', function () {
-                    // Remover clase 'active' de todos los botones
+                    //Quita la clase 'active' de todos los botones
                     filterButtons.forEach(btn => btn.classList.remove('active'));
-                    // Agregar clase 'active' al botón clickeado
+                    // Agregar la clase 'active' al botón clickeado
                     this.classList.add('active');
-
+                    //Aqui se obtiene la categoria(data-category) del boton clickeado
                     const category = this.getAttribute('data-category');
-
+                    //Para cada producto
                     productItems.forEach(item => {
+                        //Si la categoria es todos o coincide con la categoria del producto
                         if (category === 'todos' || item.getAttribute('data-category') === category) {
+                           //Mostramos el producto que coincide 
                             item.style.display = 'block';
                         } else {
+                            //O Ocultamos los producto que no coinciden 
                             item.style.display = 'none';
                         }
                     });
+                    // Aqui seleciconamos el contenedor dende estan los productos Crea un array solo con los productos visibles 
+                    //con display: block
                     <!-- Reorganizar los productos visibles -->
                     const container = document.querySelector('.row.g-4');
                     const visibleItems = Array.from(productItems).filter(item => item.style.display === 'block');
+                    //Limpiar el contenedor 
                     container.innerHTML = '';
+                    //Vuelve a agregar solo los productos visibles en el orden original
                     visibleItems.forEach(item => container.appendChild(item));
 
                 });

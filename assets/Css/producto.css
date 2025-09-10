@@ -12,7 +12,12 @@ body {
     color: #FFFFFF;
 }
 
-
+  .avatar {
+            vertical-align: middle;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
 footer {
     background-color: #1e8fff91;
     color: white;
@@ -96,6 +101,42 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.filter-btn:hover {
+    background-color: #32cd32;
+}
+
+.filter-btn.active {
+    background-color: #196619;
+}
+
+.detalleproducto {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background: #19538ea3;
+    color: white;
+    border: 2px solid #1e8fff8a;
+    border-radius: 15px;
+    overflow: hidden;
+}
+.chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+}
+
+.chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  width: "10px";
 }
 
 .social-section {
