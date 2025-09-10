@@ -307,24 +307,24 @@
             font-size: 0.9em;
             margin-right: 5px;
         }
-        
+
         /* Ocultar fila de descuento inicialmente */
         .discount-row {
             display: none;
         }
-        
+
         .empty-cart {
             text-align: center;
             padding: 40px;
             color: #aaa;
         }
-        
+
         .empty-cart i {
             font-size: 60px;
             margin-bottom: 20px;
             color: #444;
         }
-        
+
         .continue-shopping {
             display: inline-block;
             margin-top: 20px;
@@ -335,7 +335,7 @@
             border-radius: 4px;
             transition: background 0.2s;
         }
-        
+
         .continue-shopping:hover {
             background-color: #0d6efd;
             color: white;
@@ -441,7 +441,7 @@
             <h1 class="text-center mb-4">Mi Carrito de Compras </h1>
             <p class="originales mb-4">---Productos son 100% Originales.---</p>
         </div>
-        
+
         <div class="cart-layout">
             <!-- Sección izquierda - Productos del carrito -->
             <section class="cart-section">
@@ -519,7 +519,7 @@
             <p> ©2025 Level-Up Gamer. Todos los derechos reservados.</p>
         </div>
     </footer>
-
+    <script src="assets/js/carrito.js"></script>
     <!-- Bootstrap JS Bundle con Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxMxD2scQbITxI"
@@ -527,13 +527,14 @@
 
     <script>
         // Datos de productos con imágenes reales
+        //Creamos una arraylist con la informacion de los productos disponibles en la tienda
         const products = [
             {
                 id: "C0001",
                 name: "PlayStation 5",
                 category: "Consolas",
                 price: 549990,
-                distribuidor:"distribuidor",
+                distribuidor: "Sony Chile",
                 image: "assets/images/ps5.jpg"
             },
             {
@@ -541,7 +542,7 @@
                 name: "Controlador Xbox Series X",
                 category: "Accesorios",
                 price: 59990,
-                distribuidor:"distribuidor",
+                distribuidor: "Microsoft Chile",
                 image: "assets/images/Controlador.jpg"
             },
             {
@@ -549,7 +550,7 @@
                 name: "Auriculares HyperX Cloud II",
                 category: "Accesorios",
                 price: 79990,
-                 distribuidor:"distribuidor",
+                distribuidor: "HP Chile",
                 image: "assets/images/Auriculares Gamer HyperX Cloud II.jpg"
             },
             {
@@ -557,7 +558,7 @@
                 name: "Catan",
                 category: "Juegos de Mesa",
                 price: 29990,
-                 distribuidor:"distribuidor",
+                distribuidor: "Devir Chile",
                 image: "assets/images/catan.jpg"
             },
             {
@@ -565,7 +566,7 @@
                 name: "Carcassonne",
                 category: "Juegos de Mesa",
                 price: 24990,
-                 distribuidor:"distribuidor",
+                distribuidor: "Devir Chile",
                 image: "assets/images/Carcassonne.jpg"
             },
             {
@@ -573,7 +574,7 @@
                 name: "PC Gamer ASUS ROG Strix",
                 category: "Computadores Gamers",
                 price: 1299990,
-                 distribuidor:"distribuidor",
+                distribuidor: "Asus Chile",
                 image: "assets/images/pc-asus.png"
             },
             {
@@ -581,7 +582,7 @@
                 name: "Silla Gamer Secretlab",
                 category: "Sillas Gamers",
                 price: 349990,
-                 distribuidor:"distribuidor",
+                distribuidor: "Secretlab South America",
                 image: "assets/images/Silla Gamer Secretlab Titan.jpg"
             },
             {
@@ -589,7 +590,7 @@
                 name: "Mouse Logitech G502",
                 category: "Mouse",
                 price: 49990,
-                 distribuidor:"distribuidor",
+                distribuidor: "Logitech Latin America",
                 image: "assets/images/mouse.png"
             },
             {
@@ -597,7 +598,7 @@
                 name: "Mousepad Razer Goliathus",
                 category: "Mousepad",
                 price: 29990,
-                 distribuidor:"distribuidor",
+                distribuidor: "Razer Chile",
                 image: "assets/images/Mousepad.jpg"
             },
             {
@@ -605,11 +606,12 @@
                 name: "Polera Gamer 'Level-Up'",
                 category: "Poleras Personalizadas",
                 price: 14990,
-                 distribuidor:"distribuidor",
+                distribuidor: "GearStore Chile",
                 image: "assets/images/poleraLEVEL-UP.png"
             }
         ];
 
+        //Creamos un arraylist  de carrito de compra con algunos productos de forma inicial esto lo hacemos con su Id ademas de la cantidad de este 
         // Carrito de compras (inicialmente con algunos productos)
         let cart = [
             { id: "C0001", quantity: 1 },
@@ -619,18 +621,23 @@
             { id: "MS001", quantity: 1 }
         ];
 
-        // Función para formatear números con separadores de miles
+        // Función para formatear números con separadores de miles en formato chileno con puntos en los separadores de miles
         function formatNumber(number) {
             return number.toLocaleString('es-CL');
+            //toLocaleString('es-CL'): Formato chileno con puntos para miles
         }
 
         // Función para obtener un producto por ID
+        //Busca y retorna un producto especifico por su Id
+        //find(): Busca en el array hasta encontrar coincidencia
         function getProductById(id) {
             return products.find(p => p.id === id);
         }
 
         // Función para calcular el subtotal del carrito
+        //Calcula el subtotal sumando el precio de cada producto multiplicado por su cantidad.
         function calculateSubtotal() {
+            //reduce(): Suma acumulativa de (precio × cantidad) de cada producto
             return cart.reduce((total, item) => {
                 const product = getProductById(item.id);
                 return total + (product.price * item.quantity);
@@ -638,23 +645,27 @@
         }
 
         // Función para actualizar los totales en la UI
+        //Mantener la interfaz sincronizada con los cálculos
+        //Actualiza los valores de subtotal, total y el contador de items en la interfaz.
         function updateTotals() {
             const subtotal = calculateSubtotal();
             document.getElementById('subtotal-value').textContent = formatNumber(subtotal);
             document.getElementById('total-value').textContent = formatNumber(subtotal);
-            
+
             // Actualizar contador del carrito
             const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
             document.querySelector('.cart-count').textContent = totalItems;
         }
 
         // Función para actualizar la cantidad de un producto
+        //Actualiza la cantidad de un producto en el carrito y en la interfaz.
         function updateQuantity(id, newQuantity) {
+            // Actualiza la cantidad en el array cart
             const cartItem = cart.find(item => item.id === id);
             if (cartItem) {
                 cartItem.quantity = newQuantity;
-                
-                // Actualizar total por producto en la UI
+
+                // Actualizar total por producto en pantalla
                 const itemElement = document.querySelector(`.cart-item[data-id="${id}"]`);
                 if (itemElement) {
                     const product = getProductById(id);
@@ -665,8 +676,11 @@
         }
 
         // Función para eliminar un producto del carrito
+        // Elimina un producto del carrito y actualiza la interfaz
         function removeFromCart(id) {
+            //filter(): Crea nuevo array excluyendo el producto eliminado
             cart = cart.filter(item => item.id !== id);
+            //vuelve a dibujar el carrito y actualiza totales
             renderCartItems();
             updateTotals();
         }
@@ -674,7 +688,7 @@
         // Función para renderizar los productos en el carrito
         function renderCartItems() {
             const cartContainer = document.getElementById('cart-items-container');
-            
+            //Si el carrito esta vacio muestra mensaje
             if (cart.length === 0) {
                 cartContainer.innerHTML = `
                     <div class="empty-cart">
@@ -686,14 +700,15 @@
                 `;
                 return;
             }
-            
+
             let cartHTML = '';
-            
+
             cart.forEach(item => {
                 const product = getProductById(item.id);
+                //Si tiene productos genera un HTML para cada uno
                 if (product) {
                     const totalPrice = product.price * item.quantity;
-                    
+
                     cartHTML += `
                         <div class="cart-item" data-id="${product.id}">
                             <div class="item-info">
@@ -704,7 +719,7 @@
                                     <h3>${product.name}</h3>
                                     <span class="item-category">${product.category}</span>
                                     <p>Código: ${product.id}</p>
-                                    <p> distribuidor:${product.distribuidor}
+                                    <p> Distribuidor:${product.distribuidor}
                                 </div>
                             </div>
                             <div class="item-price">
@@ -723,9 +738,9 @@
                     `;
                 }
             });
-            
+
             cartContainer.innerHTML = cartHTML;
-            
+
             // Agregar eventos a los botones
             addEventListeners();
         }
@@ -733,56 +748,56 @@
         // Función para agregar event listeners
         function addEventListeners() {
             // Delegación de eventos para los botones de cantidad
-            document.addEventListener('click', function(e) {
+            document.addEventListener('click', function (e) {
                 if (e.target.classList.contains('quantity-btn')) {
                     const id = e.target.getAttribute('data-id');
                     const input = document.querySelector(`.quantity-input[data-id="${id}"]`);
                     let value = parseInt(input.value);
-                    
+
                     if (e.target.classList.contains('plus')) {
                         value++;
                     } else if (e.target.classList.contains('minus') && value > 1) {
                         value--;
                     }
-                    
+
                     input.value = value;
                     updateQuantity(id, value);
                     updateTotals();
                 }
-                
+
                 if (e.target.classList.contains('remove-btn') || e.target.closest('.remove-btn')) {
                     const btn = e.target.classList.contains('remove-btn') ? e.target : e.target.closest('.remove-btn');
                     const id = btn.getAttribute('data-id');
                     removeFromCart(id);
                 }
             });
-            
+
             // Eventos para los inputs de cantidad
-            document.addEventListener('change', function(e) {
+            document.addEventListener('change', function (e) {
                 if (e.target.classList.contains('quantity-input')) {
                     const id = e.target.getAttribute('data-id');
                     let value = parseInt(e.target.value);
-                    
+
                     if (value < 1) {
                         value = 1;
                         e.target.value = 1;
                     }
-                    
+
                     updateQuantity(id, value);
                     updateTotals();
                 }
             });
-            
+
             // Validar inputs de cantidad
-            document.addEventListener('input', function(e) {
+            document.addEventListener('input', function (e) {
                 if (e.target.classList.contains('quantity-input')) {
                     e.target.value = e.target.value.replace(/[^0-9]/g, '');
                 }
             });
-            
+
             // Cupón de descuento
             document.querySelector('.apply-btn').addEventListener('click', applyCoupon);
-            
+
             // Botón de pago
             document.querySelector('.checkout-btn').addEventListener('click', checkout);
         }
@@ -791,7 +806,7 @@
         function applyCoupon() {
             const couponCode = document.querySelector('.coupon-input').value;
             const discountRow = document.getElementById('discount-row');
-            
+            //Al escribir Duoc se aplica un 20% de descuento 
             if (couponCode.trim() === 'Duoc') {
                 const subtotal = calculateSubtotal();
                 const discount = Math.round(subtotal * 0.2);
@@ -807,8 +822,9 @@
             }
         }
 
-        // Función para procesar el pago
+        // Función para procesar la compra y simula alerta 
         function checkout() {
+            //verifica que el carrito no este vacio
             if (cart.length === 0) {
                 alert('Tu carrito está vacío. Agrega productos antes de pagar.');
                 return;
@@ -818,7 +834,7 @@
         }
 
         // Inicializar la página
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             renderCartItems();
             updateTotals();
         });
