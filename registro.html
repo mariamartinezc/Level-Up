@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Level-UP</title>
-    
+
     <!--icono web-->
     <link rel="icon" type="image/png" href="assets/images/LogoNuevo.png" />
 
@@ -246,7 +246,7 @@
                                                 <hr class="my-3">
                                             </div>
 
-                                            
+
 
                                             <div class="col-12 d-grid d-md-flex gap-2 mt-2">
                                                 <button type="submit" class="btn btn-success"><i
@@ -259,14 +259,15 @@
                                 </div>
 
                                 <!-- Login -->
-                                 
+
                                 <div class="tab-pane fade" id="pane-login" role="tabpanel">
                                     <form id="form-login" class="mt-2" novalidate>
                                         <div class="mb-3">
                                             <label class="form-label">Correo @duoc.cl</label>
                                             <input type="email" class="form-control" id="loginEmail" required
                                                 placeholder="usuario@duocuc.cl ,@profesor.duoc.cl" inputmode="email">
-                                            <div class="invalid-feedback">Ingresa un correo válido @duocuc.cl o @profesor.duoc.cl .</div>
+                                            <div class="invalid-feedback">Ingresa un correo válido @duocuc.cl o
+                                                @profesor.duoc.cl .</div>
                                         </div>
                                         <div class="mb-3">
                                             <label class="form-label">Contraseña</label>
@@ -319,8 +320,8 @@
                     <p>Demo :Ingresa tu correo @duocuc.cl o @profesor.duoc.cl y te mostraremos una pista de tu
                         contraseña. Si no la recuerdas, crea una cuenta nueva.</p>
                     <div class="input-group">
-                        <input type="email" class="form-control" id="recoverEmail" placeholder="usuario@duocuc.cl ,@profesor.duoc.cl"
-                            aria-label="Email" inputmode="email">
+                        <input type="email" class="form-control" id="recoverEmail"
+                            placeholder="usuario@duocuc.cl ,@profesor.duoc.cl" aria-label="Email" inputmode="email">
                         <button class="btn btn-primary" id="recoverBtn" type="button">Buscar</button>
                     </div>
                     <div class="mt-3" id="recoverResult"></div>
@@ -374,6 +375,7 @@
 
     <script>
         // Utilidades de validación
+        //eclarar constantes, que son valores o variables que no pueden ser reasignados ni modificados después de su inicialización
         const nameRegex = /^[A-Za-zÁÉÍÓÚÜÑáéíóúüñ ]{1,50}$/;
         const duocEmailRegex = /^[a-zA-Z0-9._%+-]+@(duocuc\.cl|profesor\.duoc\.cl)$/i;
         const phoneRegex = /^\d{8,15}$/; // flexible, solo dígitos
@@ -421,9 +423,9 @@
                     ok = false;
                     emailError.textContent = 'Este correo ya está registrado. Usa otro @duocuc.cl o @profesor.duoc.cl.';
                 } else {
-                    emailError.textContent = 'Ingresa un correo @duocuc.cl o @profesor.duoc.cl válido.';
+                    emailError.textContent = 'Ingresa un correo @duocuc.cl o @profesor.duoc.cl valido.';
                 }
-            } else { emailError.textContent = 'Ingresa un correo @duocuc.cl o @profesor.duoc.cl válido.'; }
+            } else { emailError.textContent = 'Ingresa un correo @duocuc.cl o @profesor.duoc.cl valido.'; }
             email.classList.toggle('is-invalid', !ok);
             return ok;
         }
@@ -501,7 +503,7 @@
         });
 
         document.getElementById('resetReg').addEventListener('click', () => {
-            // limpiar errores y mascotas
+            // limpiar errores y usuario
             [fullName, email, password, confirmPassword, phone].forEach(el => el.classList.remove('is-invalid'));
             petsBody.innerHTML = '';
             addPetRow();
